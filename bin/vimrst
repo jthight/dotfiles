@@ -1,0 +1,5 @@
+cp -r /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/UltiSnips/* /mnt/c/Users/jthig/vimfiles/UltiSnips/
+cp /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/.vimrc /mnt/c/Users/jthig/ 
+cp /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/_vimrc /mnt/c/Users/jthig/ 
+cp /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/.vimrc-sys /mnt/c/Users/jthig/ 
+cp /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/_vimrc-sys /mnt/c/Users/jthig/ 

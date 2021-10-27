@@ -1,0 +1,1 @@
+sudo ansible-pull -U https://github.com/jthight/memories-for-tomorrow.git local-files.yml

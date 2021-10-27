@@ -1,0 +1,6 @@
+# This file .gitignore is for my linux dotfiles and supporting scripts
+.git
+*~
+*.swp
+.vim/pack/
+tags

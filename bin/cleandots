@@ -1,0 +1,60 @@
+ls -a $HOME/.gitconfig.* &> /dev/null
+if [[ $? -eq 0 ]] ; then
+  echo "Removing .gitconfig backups!"
+  rm $1 $HOME/.gitconfig.*
+fi
+ls -a $HOME/.bash_aliases.* &> /dev/null
+if [[ $? -eq 0 ]] ; then
+  echo "Removing .bash_aliases backups!"
+  rm $1 $HOME/.bash_aliases.*
+fi
+ls -a $HOME/.bashrc.* &> /dev/null
+if [[ $? -eq 0 ]] ; then
+  echo "Removing .bashrc backups!"
+  rm $1 $HOME/.bashrc.*
+fi
+ls -a $HOME/.tmux.conf.* &> /dev/null
+if [[ $? -eq 0 ]] ; then
+  echo "Removing .tmux.conf backups!"
+  rm $1 $HOME/.tmux.conf.*
+fi
+ls -a $HOME/.vimrc.* &> /dev/null
+if [[ $? -eq 0 ]] ; then
+  echo "Removing .vimrc backups!"
+  rm $1 $HOME/.vimrc.*
+fi
+ls -a $HOME/.vimrc-sys.* &> /dev/null
+if [[ $? -eq 0 ]] ; then
+  echo "Removing .vimrc-sys backups!"
+  rm $1 $HOME/.vimrc-sys.*
+fi
+if [ -d "$HOME/.vim/autoload/" ]; then
+  while true; do
+      read -p "Do you wish to remove $HOME/.vim/autoload (yes/no)? " yn
+      case $yn in
+          [Yy]* ) rm -r $HOME/.vim/autoload; break;;
+          [Nn]* ) break;;
+          * ) echo "Please answer yes or no.";;
+      esac
+  done
+fi
+if [ -d "$HOME/.vim/colors/" ]; then
+  while true; do
+      read -p "Do you wish to remove $HOME/.vim/colors (yes/no)? " yn
+      case $yn in
+          [Yy]* ) rm -r $HOME/.vim/colors; break;;
+          [Nn]* ) break;;
+          * ) echo "Please answer yes or no.";;
+      esac
+  done
+fi
+if [ -d "$HOME/.vim/plugged/" ]; then
+  while true; do
+      read -p "Do you wish to remove $HOME/.vim/plugged (yes/no)? " yn
+      case $yn in
+          [Yy]* ) sudo rm -r $HOME/.vim/plugged; break;;
+          [Nn]* ) break;;
+          * ) echo "Please answer yes or no.";;
+      esac
+  done
+fi

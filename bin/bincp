@@ -1,0 +1,31 @@
+cp ~/bin/cleandots ~/src/memories-for-tomorrow/files/bin/
+cp ~/bin/cleandots ~/src/ansible/data/bin/
+cp ~/bin/pulldots ~/src/memories-for-tomorrow/files/bin/
+cp ~/bin/pulldots ~/src/ansible/data/bin/
+cp ~/bin/dotsscp ~/src/memories-for-tomorrow/files/bin/
+cp ~/bin/dotsscp ~/src/ansible/data/bin/
+cp ~/bin/pullgit ~/src/memories-for-tomorrow/files/bin/
+cp ~/bin/pullgit ~/src/ansible/data/bin/
+cp ~/bin/bincp ~/src/memories-for-tomorrow/files/bin/
+cp ~/bin/bincp ~/src/ansible/data/bin/
+# Add all files to the repository 
+cd ~/src/memories-for-tomorrow/
+git add .
+# Commit changes with message with current date stamp
+git commit -m "~/bin files on `date +'%d-%m-%Y %H:%M:%S'`"
+# Push changes towards GitHub
+git push -u origin master
+cd ~/src/secret_stuff/
+# Add all files to the repository 
+git add .
+# Commit changes with message with current date stamp
+git commit -m "~/bin files on `date +'%d-%m-%Y %H:%M:%S'`"
+# Push changes towards GitHub
+git push -u origin main
+cd ~/src/ansible/
+# Add all files to the repository 
+git add .
+# Commit changes with message with current date stamp
+git commit -m "~/bin files on `date +'%d-%m-%Y %H:%M:%S'`"
+# Push changes towards GitHub
+git push -u origin main

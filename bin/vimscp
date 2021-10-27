@@ -1,0 +1,47 @@
+cp ~/.vimrc ~/src/memories-for-tomorrow/files/
+cp ~/.vimrc ~/src/ansible/data/
+cp ~/.vimrc ~/src/secret_stuff/
+cp ~/.vimrc /mnt/c/Users/jthig/
+cp ~/.vimrc /mnt/c/Users/jthig/_vimrc
+cp /mnt/c/Users/jthig/.vimrc /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/
+cp /mnt/c/Users/jthig/.vimrc /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/
+cp /mnt/c/Users/jthig/_vimrc ~/src/memories-for-tomorrow/files/
+cp /mnt/c/Users/jthig/_vimrc ~/src/ansible/data/
+cp /mnt/c/Users/jthig/_vimrc ~/src/secret_stuff/
+cp /mnt/c/Users/jthig/_vimrc /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/
+cp /mnt/c/Users/jthig/_vimrc /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/
+cp ~/.vim/UltiSnips/* ~/src/memories-for-tomorrow/files/.vim/UltiSnips/
+cp ~/.vim/UltiSnips/* ~/src/ansible/data/.vim/UltiSnips/
+cp ~/.vim/UltiSnips/* /mnt/c/Users/jthig/.vim/UltiSnips/
+cp ~/.vim/UltiSnips/* /mnt/c/Users/jthig/vimfiles/UltiSnips/
+cp ~/.vim/UltiSnips/* /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/UltiSnips/
+cp ~/.vim/UltiSnips/* /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/UltiSnips/
+cp /mnt/c/Users/jthig/plugcheetsheet /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/
+cp /mnt/c/Users/jthig/plugcheetsheet /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/
+cp ~/.vim/thesaurus/* ~/src/memories-for-tomorrow/files/.vim/thesaurus/
+cp ~/.vim/thesaurus/* ~/src/ansible/data/.vim/thesaurus/
+cp ~/.vim/thesaurus/* /mnt/c/Users/jthig/.vim/thesaurus/
+cp ~/.vim/thesaurus/* /mnt/c/Users/jthig/vimfiles/thesaurus/
+cp ~/.vim/thesaurus/* /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/thesaurus/
+cp ~/.vim/thesaurus/* /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/thesaurus/
+cd ~/src/memories-for-tomorrow/
+# Add all files to the repository 
+git add .
+# Commit changes with message with current date stamp
+git commit -m "vim files on `date +'%d-%m-%Y %H:%M:%S'`"
+# Push changes towards GitHub
+git push -u origin master
+cd ~/src/secret_stuff/
+# Add all files to the repository 
+git add .
+# Commit changes with message with current date stamp
+git commit -m "vim files on `date +'%d-%m-%Y %H:%M:%S'`"
+# Push changes towards GitHub
+git push -u origin main
+cd ~/src/ansible/
+# Add all files to the repository 
+git add .
+# Commit changes with message with current date stamp
+git commit -m "vim files on `date +'%d-%m-%Y %H:%M:%S'`"
+# Push changes towards GitHub
+git push -u origin main
