@@ -155,6 +155,10 @@ main() {
     local sourceFile=""
     local targetFile=""
 
+    # test for new install to copy pack Plugins
+    if [ ! -L "$HOME/.vim"]; then
+        cp -r $HOME/.vim/pack/ ./.vim/
+    fi
     for i in ${FILES_TO_SYMLINK[@]}; do
 
         sourceFile="$(pwd)/$i"
