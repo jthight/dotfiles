@@ -360,6 +360,7 @@ inoremap <C-k> <C-o>gk
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 inoremap <C-j> <C-o>gj
+inoremap <C-s> <ESC>A
 "Make working with multiple buffers less of a pain
 set splitright
 set splitbelow
