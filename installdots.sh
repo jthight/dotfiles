@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # this symlinks all the dotfiles (and .vim/) to ~/
 # it also symlinks ~/bin for easy updating

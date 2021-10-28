@@ -1,0 +1,24 @@
+bash1="/bin/bash"
+bash2="/usr/bin/bash"
+
+bash3=$(command -v bash)
+echo $bash1
+echo $bash2
+echo $bash3
+if [[ "$bash1" == "$bash1" ]]
+then
+  echo "Works!"
+fi
+
+if [[ -f "$bash1" ]] 
+then
+  echo "All is well bash is at $bash1"
+else
+  if [[ -f "$bash2" ]]
+  then
+    #ln -s $bash2 $bash1
+    echo "$bash2 was linked to $bash1."
+  else
+    echo "No 'bash' was found!"
+  fi
+fi
