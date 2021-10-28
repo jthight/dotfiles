@@ -1,0 +1,13 @@
+#!/bin/bash
+
+repositorys=( "$HOME/src/ansible/" "$HOME/src/memories-for-tomorrow/" \
+             "$HOME/src/secret_stuff/" "$HOME/.dotfiles/" )
+for i in "${repositorys[@]}"
+do
+  if [[ -d "$i" ]]
+  then
+    echo $i
+    cd $i
+    git pull origin main
+  fi
+done
