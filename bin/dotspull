@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+cd $HOME/.dotfiles/
+git pull origin main
