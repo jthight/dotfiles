@@ -156,8 +156,9 @@ main() {
     local targetFile=""
 
     # test for new install to copy pack Plugins
-    if [ ! -L "$HOME/.vim"]; then
+    if [ ! -L "$HOME/.vim" ] && [ ! -d ./.vim/pack/ ]; then
         cp -r $HOME/.vim/pack/ ./.vim/
+        echo "Copied vim Plugins to dotfiles/.vim"
     fi
     for i in ${FILES_TO_SYMLINK[@]}; do
 
