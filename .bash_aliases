@@ -38,7 +38,7 @@ alias nba='nano ~/.bash_aliases'
 alias vba='vim ~/.bash_aliases'
 
 # Edit .vimrc and .vimrc-sys
-alias vv='vim ~/.vimrc'
+alias vv='vim ~/.dotfiles/.vimrc'
 alias vs='vim ~/.vimrc-sys'
 
 # Speedtest Internet speed 

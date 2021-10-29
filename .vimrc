@@ -1,7 +1,7 @@
 " File: $MYVIMRC
 " Author: John Hight
 " Description: vimrc for All systems
-" Last Modified: October 27, 2021
+" Last Modified: October 29, 2021
 " Use "/MAIN" to go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
 " automatically when .vimrc is found. However, this might be useful
@@ -284,8 +284,9 @@ set encoding=utf-8
 
 " Whitespace
 set nowrap
-set textwidth=80
-set colorcolumn=80
+" set textwidth=80
+" set colorcolumn=+5
+au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 set signcolumn=no " Hide error indicators on left column
 set formatoptions=tcqrn1
 set tabstop=2
@@ -334,7 +335,11 @@ map <leader><space> :let @/=''<cr> " clear search
 map <leader>ws :set wrap<cr>
 map <leader>wx :set nowrap<cr>
 map <leader>vr :source $MYVIMRC<cr>
-map <leader>ve :tabedit $MYVIMRC<cr>
+if has("IOS") || has("win32")
+  map <leader>ve :tabedit $MYVIMRC<cr>
+else
+  map <leader>ve :tabedit $HOME/.dotfiles/.vimrc<cr>
+endif
 map <leader>c :tabc<cr>
 map <leader>r :registers<cr>
 map <leader>f /<C-R><C-W><cr>
