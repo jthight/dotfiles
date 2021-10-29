@@ -29,13 +29,13 @@ alias up='cd .. && pwd'
 # udb - update bashrc after edit
 alias udb='source ~/.bashrc && echo "~/.bashrc -- updated"'
 
-# nb - nano edit ~/.bashrc
-alias nb='nano ~/.bashrc'
-alias vb='vim ~/.bashrc'
+# nb - nano edit ~/.dotfiles/.bashrc
+alias nb='nano ~/.dotfiles/.bashrc'
+alias vb='vim ~/.dotfiles/.bashrc'
 
-# nba - nano edit ~/.bash_aliases
-alias nba='nano ~/.bash_aliases'
-alias vba='vim ~/.bash_aliases'
+# nba - nano edit ~/.dotfiles/.bash_aliases
+alias nba='nano ~/.dotfiles/.bash_aliases'
+alias vba='vim ~/.dotfiles/.bash_aliases'
 
 # Edit .vimrc and .vimrc-sys
 alias vv='vim ~/.dotfiles/.vimrc'
