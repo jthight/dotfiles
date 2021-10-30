@@ -1,10 +1,10 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-# Version Date 20211029
+# Version Date 20211030
 # Ansible copied file .bashrc
 
-alias b-v='echo "Version 20211029"'
+alias b-v='echo "Version 20211030"'
 
 # If not running interactively, don't do anything
 case $- in
@@ -66,7 +66,11 @@ fi
 PROMPT_ALTERNATIVE=twoline
 NEWLINE_BEFORE_PROMPT=yes
 # STOP KALI CONFIG VARIABLES
-_disto="$(cat /etc/os-release | egrep ^ID=)"
+if [ "$OS" eq "Windows_NT" ]; then
+  _disto="ID=ming64"
+else
+  _disto="$(cat /etc/os-release | egrep ^ID=)"
+fi
 
 if [ "$color_prompt" = yes ]; then
     # override default virtualenv indicator in prompt
@@ -168,7 +172,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-_distro="$(cat /etc/os-release | egrep ^ID=)"
+if [ "$OS" eq "Windows_NT" ]; then
+  _disto="ID=ming64"
+else
+  _disto="$(cat /etc/os-release | egrep ^ID=)"
+fi
 # Check Internet status 
 wget -q --spider http://google.com
 if [ $? -eq 0 ]; then
