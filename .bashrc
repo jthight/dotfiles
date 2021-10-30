@@ -66,7 +66,7 @@ fi
 PROMPT_ALTERNATIVE=twoline
 NEWLINE_BEFORE_PROMPT=yes
 # STOP KALI CONFIG VARIABLES
-if [ "$OS" eq "Windows_NT" ]; then
+if [ "$OS" = "Windows_NT" ]; then
   _disto="ID=ming64"
 else
   _disto="$(cat /etc/os-release | egrep ^ID=)"
@@ -172,7 +172,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ "$OS" eq "Windows_NT" ]; then
+if [ "$OS" = "Windows_NT" ]; then
   _disto="ID=ming64"
 else
   _disto="$(cat /etc/os-release | egrep ^ID=)"

@@ -98,7 +98,7 @@ alias ports='netstat -tulanp'
 # ping - set ping to 5 times then stop
 # alias ping='ping -c 5'
 _uid="$(id -u)"
-if [ "$OS" eq "Windows_NT" ]; then
+if [ "$OS" = "Windows_NT" ]; then
   _disto="ID=ming64"
 else
   _disto="$(cat /etc/os-release | egrep ^ID=)"
