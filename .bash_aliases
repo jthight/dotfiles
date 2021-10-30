@@ -1,14 +1,14 @@
 # File: .bash_aliases
 # Author: John Hight
 # Description: .bash_aliases for Linux systems
-# Last Modified: October 8, 2021
+# Last Modified: October 29, 2021
 #
 # Aliases
 # alias alias_name="command_to_run"
 # Version Date .bash_aliases
 # Ansible copied file .bash_aliases
 
-alias a-v='echo "Version 20211008"'
+alias a-v='echo "Version 20211029"'
 # Long format list
 alias ll="ls -la"
 ## Show hidden files ##

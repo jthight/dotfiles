@@ -1,10 +1,10 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-# Version Date 20211023
+# Version Date 20211029
 # Ansible copied file .bashrc
 
-alias b-v='echo "Version 20211023"'
+alias b-v='echo "Version 20211029"'
 
 # If not running interactively, don't do anything
 case $- in
