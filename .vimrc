@@ -75,8 +75,10 @@ function! LOAD_plugins()
   call minpac#add('tpope/vim-commentary') " For Commenting gcc & gc
   call minpac#add('jeffkreeftmeijer/vim-numbertoggle')
   call minpac#add('tpope/vim-repeat')
-  call minpac#add('tpope/vim-fugitive')
-  map <leader>g :Git 
+  if has("linux")
+    call minpac#add('tpope/vim-fugitive')
+    map <leader>g :Git 
+  endif
   call minpac#add('vim-scripts/ReplaceWithRegister')
   call minpac#add('christoomey/vim-titlecase')
   call minpac#add('christoomey/vim-sort-motion')
