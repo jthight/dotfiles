@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cp ~/.dotfiles/.bash_aliases /mnt/c/Users/jthig/
+cp ~/.dotfiles/.bashrc /mnt/c/Users/jthig/
+cp ~/.dotfiles/.gitconfig /mnt/c/Users/jthig/
+cp ~/.dotfiles/.tmux.conf /mnt/c/Users/jthig/
+cp ~/.dotfiles/.vimrc /mnt/c/Users/jthig/
+cp ~/.dotfiles/.vimrc /mnt/c/Users/jthig/_vimrc
+echo "All dot files updated to latest version."

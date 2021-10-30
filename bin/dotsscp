@@ -1,18 +1,12 @@
+#!/bin/bash
+
 mkdir ~/_tmp_
 scp -r john@192.168.1.15:~/src/memories-for-tomorrow/files/ ~/_tmp_/
-cp ~/_tmp_/files/.bash_aliases ~/
-cp ~/_tmp_/files/.bashrc ~/
-cp ~/_tmp_/files/.gitconfig ~/
-cp ~/_tmp_/files/.tmux.conf ~/
-cp ~/_tmp_/files/.vimrc ~/
-cp ~/_tmp_/files/.vimrc-sys ~/
+cp ~/_tmp_/files/.bash_aliases /mnt/c/Users/jthig/
+cp ~/_tmp_/files/.bashrc /mnt/c/Users/jthig/
+cp ~/_tmp_/files/.gitconfig /mnt/c/Users/jthig/
+cp ~/_tmp_/files/.tmux.conf /mnt/c/Users/jthig/
+cp ~/_tmp_/files/.vimrc /mnt/c/Users/jthig/
 cp ~/_tmp_/files/_vimrc /mnt/c/Users/jthig/
-cp ~/_tmp_/files/_vimrc-sys /mnt/c/Users/jthig/
-FILE=~/.vim/pack/minpac/opt/minpac/autoload/minpac.vim
-if [ -f "$FILE" ]; then
-    cp -r ~/_tmp_/files/.vim ~/
-else 
-    scp -r john@192.168.1.15:~/.vim ~/
-fi
 rm -r ~/_tmp_
 echo "All dot files updated to latest version."
