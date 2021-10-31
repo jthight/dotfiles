@@ -3,6 +3,8 @@ ren vimfiles vimfiles.bk
 mklink /D C:\Users\jthig\vimfiles C:\Users\jthig\.dotfiles\.vim
 ren .vim .vim.bk
 mklink /D C:\Users\jthig\.vim C:\Users\jthig\.dotfiles\.vim
+ren bin bin.bk
+mklink /D C:\Users\jthig\bin C:\Users\jthig\.dotfiles\bin
 ren _vimrc _vimrc.bk
 mklink C:\Users\jthig\_vimrc C:\Users\jthig\.dotfiles\.vimrc
 ren .vimrc .vimrc.bk
