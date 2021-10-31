@@ -103,8 +103,8 @@ if [ "$_disto" = "ID=kali" ]; then
   else
     alias ping='ping -c 5'
   fi
-elif [ "$_disto" = "ID=ming64" ]; then
-  alias ping='ping'
+elif [ "$_disto" = "ID=mingw64" ]; then
+  alias ping='ping -n 5'
 else
   alias ping='ping -c 5'
 fi

@@ -67,7 +67,7 @@ PROMPT_ALTERNATIVE=twoline
 NEWLINE_BEFORE_PROMPT=yes
 # STOP KALI CONFIG VARIABLES
 if [ "$OS" = "Windows_NT" ]; then
-  _disto="ID=ming64"
+  _disto="ID=mingw64"
 else
   _disto="$(cat /etc/os-release | egrep ^ID=)"
 fi
@@ -181,14 +181,16 @@ case "$(curl -s --max-time 2 -I http://google.com | sed 's/^[^ ]*  *\([0-9]\).*/
   *) printf "   %s\n" "Internet IP:   Internet Offline";;
 esac
 printf "   %s\n" "OS Distro:     $_disto"
-printf "   %s\n" "User:          $(echo $USER)"
 printf "   %s\n" "Date:          $(date)"
 if [ "$OS" != "Windows_NT" ]; then
+  printf "   %s\n" "User:          $(echo $USER)"
   printf "   %s\n" "Uptime:        $(uptime -p)"
   printf "   %s\n" "Hostname:      $(hostname -f)"
   printf "   %s\n" "Kernel:        $(uname -rms)"
   printf "   %s\n" "Packages:      $(dpkg --get-selections | wc -l)"
   printf "   %s\n" "Memory:        $(free -m -h | awk '/Mem/{print $3"/"$2}')"
+else
+  printf "   %s\n" "User:          $USERNAME"
 fi
 printf "   %s\n" ".bashrc:       $(b-v)"
 printf "   %s\n" ".bash_aliases: $(a-v)"
