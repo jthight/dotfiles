@@ -1,10 +1,10 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-# Version Date 20211030
+# Version Date 20211031
 # Ansible copied file .bashrc
 
-alias b-v='echo "Version 20211030"'
+alias b-v='echo "Version 20211031"'
 
 # If not running interactively, don't do anything
 case $- in
@@ -172,23 +172,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ "$OS" = "Windows_NT" ]; then
-  _disto="ID=ming64"
-else
-  _disto="$(cat /etc/os-release | egrep ^ID=)"
-  wget -q --spider http://google.com
-fi
-# Check Internet status 
-if [ $? -eq 0 ]; then
-    _ip="$(curl -s ipinfo.io/ip)"
-else
-    _ip="Internet Offline"
-fi
-
 #clear
 printf "\n"
-printf "   %s\n" "Internet IP:   $_ip"
-printf "   %s\n" "OS Distro:     $_distro"
+# Check Internet status 
+case "$(curl -s --max-time 2 -I http://google.com | sed 's/^[^ ]*  *\([0-9]\).*/\1/; 1q')" in
+  [23]) printf "   %s\n" "Internet IP:   $(curl -s ipinfo.io/ip)";;
+  5) printf "   %s\n" "Internet IP:   Proxy Block";;
+  *) printf "   %s\n" "Internet IP:   Internet Offline";;
+esac
+printf "   %s\n" "OS Distro:     $_disto"
 printf "   %s\n" "User:          $(echo $USER)"
 printf "   %s\n" "Date:          $(date)"
 if [ "$OS" != "Windows_NT" ]; then

@@ -1,14 +1,14 @@
 # File: .bash_aliases
 # Author: John Hight
 # Description: .bash_aliases for Linux systems
-# Last Modified: October 30, 2021
+# Last Modified: October 31, 2021
 #
 # Aliases
 # alias alias_name="command_to_run"
 # Version Date .bash_aliases
 # Ansible copied file .bash_aliases
 
-alias a-v='echo "Version 20211030"'
+alias a-v='echo "Version 20211031"'
 # Long format list
 alias ll="ls -la"
 ## Show hidden files ##
@@ -97,12 +97,11 @@ alias home='cd ~'
 alias ports='netstat -tulanp'
 # ping - set ping to 5 times then stop
 # alias ping='ping -c 5'
-_uid="$(id -u)"
-if [ "$OS" = "Windows_NT" ]; then
-  _disto="ID=ming64"
-else
-  _disto="$(cat /etc/os-release | egrep ^ID=)"
-fi
+# if [ "$OS" = "Windows_NT" ]; then
+#   _disto="ID=ming64"
+# else
+#   _disto="$(cat /etc/os-release | egrep ^ID=)"
+# fi
 if [ "$_disto" = "ID=kali" ]; then
   if [ $_uid != "0" ]; then
     alias ping='sudo ping -c 5'
