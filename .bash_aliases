@@ -97,19 +97,16 @@ alias home='cd ~'
 alias ports='netstat -tulanp'
 # ping - set ping to 5 times then stop
 # alias ping='ping -c 5'
-# if [ "$OS" = "Windows_NT" ]; then
-#   _disto="ID=ming64"
-# else
-#   _disto="$(cat /etc/os-release | egrep ^ID=)"
-# fi
 if [ "$_disto" = "ID=kali" ]; then
   if [ $_uid != "0" ]; then
     alias ping='sudo ping -c 5'
   else
     alias ping='ping -c 5'
   fi
+elif [ "$_disto" = "ID=ming64" ]; then
+  alias ping='ping'
 else
-    alias ping='ping -c 5'
+  alias ping='ping -c 5'
 fi
 # paths - list all exe paths
 alias paths='echo -e ${PATH//:/\\n}'
