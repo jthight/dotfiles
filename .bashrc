@@ -176,9 +176,9 @@ if [ "$OS" = "Windows_NT" ]; then
   _disto="ID=ming64"
 else
   _disto="$(cat /etc/os-release | egrep ^ID=)"
+  wget -q --spider http://google.com
 fi
 # Check Internet status 
-wget -q --spider http://google.com
 if [ $? -eq 0 ]; then
     _ip="$(curl -s ipinfo.io/ip)"
 else
@@ -191,11 +191,13 @@ printf "   %s\n" "Internet IP:   $_ip"
 printf "   %s\n" "OS Distro:     $_distro"
 printf "   %s\n" "User:          $(echo $USER)"
 printf "   %s\n" "Date:          $(date)"
-printf "   %s\n" "Uptime:        $(uptime -p)"
-printf "   %s\n" "Hostname:      $(hostname -f)"
-printf "   %s\n" "Kernel:        $(uname -rms)"
-printf "   %s\n" "Packages:      $(dpkg --get-selections | wc -l)"
-printf "   %s\n" "Memory:        $(free -m -h | awk '/Mem/{print $3"/"$2}')"
+if [ "$OS" != "Windows_NT" ]; then
+  printf "   %s\n" "Uptime:        $(uptime -p)"
+  printf "   %s\n" "Hostname:      $(hostname -f)"
+  printf "   %s\n" "Kernel:        $(uname -rms)"
+  printf "   %s\n" "Packages:      $(dpkg --get-selections | wc -l)"
+  printf "   %s\n" "Memory:        $(free -m -h | awk '/Mem/{print $3"/"$2}')"
+fi
 printf "   %s\n" ".bashrc:       $(b-v)"
 printf "   %s\n" ".bash_aliases: $(a-v)"
 printf "\n"
