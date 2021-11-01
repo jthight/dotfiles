@@ -364,9 +364,9 @@ else
   map <leader>7 :UltiSnipsEdit<CR> "Edit snippets
 endif
 map <leader>8 :UltiSnipsEdit!<CR> "Edit snippets
-" map jk or kj as <esc> key when in insert mode
+" map jk or jj as <esc> key when in insert mode
 inoremap jk <esc>
-inoremap kj <esc>
+inoremap jj <esc>
 "So I can move around in insert
 inoremap <C-k> <C-o>gk
 inoremap <C-h> <Left>
