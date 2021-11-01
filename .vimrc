@@ -1,7 +1,7 @@
 " File: $MYVIMRC
 " Author: John Hight
 " Description: vimrc for All systems
-" Last Modified: October 30, 2021
+" Last Modified: November 1, 2021
 " Use "/MAIN" to go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
 " automatically when .vimrc is found. However, this might be useful
@@ -178,9 +178,9 @@ function! LINUX_code()
   endif
   " Run Python3 with <F9>
   autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-  " load .vimrc-sys if present
-  if !empty(glob("$HOME/.vimrc-sys"))
-    source $HOME/.vimrc-sys
+  " load .vimrc.local if present
+  if !empty(glob("$HOME/.vimrc.local"))
+    source $HOME/.vimrc.local
   endif
 endfunction
 "
@@ -237,9 +237,9 @@ function! WIN_coce()
   if has('python3')
     silent! python3 1
   endif
-  " load _vimrc-sys if present
-  if !empty(glob("$HOME/_vimrc-sys"))
-    source $HOME/_vimrc-sys
+  " load _vimrc.local if present
+  if !empty(glob("$HOME/_vimrc.local"))
+    source $HOME/_vimrc.local
   endif
 endfunction
 

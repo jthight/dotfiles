@@ -1,15 +1,7 @@
 #!/bin/bash
 
-cp $HOME/bin/cleandots $HOME/src/memories-for-tomorrow/files/bin/
-cp $HOME/bin/cleandots $HOME/src/ansible/data/bin/
-cp $HOME/bin/pulldots $HOME/src/memories-for-tomorrow/files/bin/
-cp $HOME/bin/pulldots $HOME/src/ansible/data/bin/
-cp $HOME/bin/dotsscp $HOME/src/memories-for-tomorrow/files/bin/
-cp $HOME/bin/dotsscp $HOME/src/ansible/data/bin/
-cp $HOME/bin/pullgit $HOME/src/memories-for-tomorrow/files/bin/
-cp $HOME/bin/pullgit $HOME/src/ansible/data/bin/
-cp $HOME/bin/bincp $HOME/src/memories-for-tomorrow/files/bin/
-cp $HOME/bin/bincp $HOME/src/ansible/data/bin/
+cp $HOME/bin/* $HOME/src/memories-for-tomorrow/files/bin/
+cp $HOME/bin/* $HOME/src/ansible/data/bin/
 # Add all files to the repository 
 cd $HOME/src/memories-for-tomorrow/
 git add .

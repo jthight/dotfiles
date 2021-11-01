@@ -1,9 +1,58 @@
 #!/bin/bash
 
-cp ~/.dotfiles/.bash_aliases /mnt/c/Users/jthig/
-cp ~/.dotfiles/.bashrc /mnt/c/Users/jthig/
-cp ~/.dotfiles/.gitconfig /mnt/c/Users/jthig/
-cp ~/.dotfiles/.tmux.conf /mnt/c/Users/jthig/
-cp ~/.dotfiles/.vimrc /mnt/c/Users/jthig/
-cp ~/.dotfiles/.vimrc /mnt/c/Users/jthig/_vimrc
-echo "All dot files updated to latest version."
+cp $HOME/.gitconfig $HOME/src/memories-for-tomorrow/files/
+cp $HOME/.gitconfig $HOME/src/ansible/data/
+cp $HOME/.gitconfig $HOME/src/secret_stuff/
+cp $HOME/bin/* $HOME/src/memories-for-tomorrow/files/bin/
+cp $HOME/bin/* $HOME/src/ansible/data/bin/
+cp $HOME/.bash{rc,_aliases} /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/
+cp $HOME/.bash{rc,_aliases} /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/
+cp $HOME/.bash{rc,_aliases} $HOME/src/memories-for-tomorrow/files/
+cp $HOME/.bash{rc,_aliases} $HOME/src/ansible/data/
+cp $HOME/.bash{rc,_aliases} $HOME/src/secret_stuff/
+cp $HOME/.tmux.conf /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/
+cp $HOME/.tmux.conf /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/
+cp $HOME/.tmux.conf $HOME/src/memories-for-tomorrow/files/
+cp $HOME/.tmux.conf $HOME/src/ansible/data/
+cp $HOME/.tmux.conf $HOME/src/secret_stuff/
+cp $HOME/.vimrc $HOME/src/memories-for-tomorrow/files/
+cp $HOME/.vimrc $HOME/src/ansible/data/
+cp $HOME/.vimrc $HOME/src/secret_stuff/
+cp $HOME/.vimrc /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/
+cp $HOME/.vimrc /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/
+cp $HOME/.vimrc $HOME/src/memories-for-tomorrow/files/_vimrc
+cp $HOME/.vimrc $HOME/src/ansible/data/_vimrc
+cp $HOME/.vimrc $HOME/src/secret_stuff/_vimrc
+cp $HOME/.vimrc /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/_vimrc
+cp $HOME/.vimrc /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/_vimrc
+cp $HOME/.vim/UltiSnips/* $HOME/src/memories-for-tomorrow/files/.vim/UltiSnips/
+cp $HOME/.vim/UltiSnips/* $HOME/src/ansible/data/.vim/UltiSnips/
+cp $HOME/.vim/UltiSnips/* /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/UltiSnips/
+cp $HOME/.vim/UltiSnips/* /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/UltiSnips/
+cp /mnt/c/Users/jthig/plugcheetsheet /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/
+cp /mnt/c/Users/jthig/plugcheetsheet /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/
+cp $HOME/.vim/thesaurus/* $HOME/src/memories-for-tomorrow/files/.vim/thesaurus/
+cp $HOME/.vim/thesaurus/* $HOME/src/ansible/data/.vim/thesaurus/
+cp $HOME/.vim/thesaurus/* /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/thesaurus/
+cp $HOME/.vim/thesaurus/* /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/thesaurus/
+cd $HOME/src/memories-for-tomorrow/
+# Add all files to the repository 
+git add .
+# Commit changes with message with current date stamp
+git commit -m "Updated dot files on `date +'%d-%m-%Y %H:%M:%S'`"
+# Push changes towards GitHub
+git push -u origin master
+cd $HOME/src/secret_stuff/
+# Add all files to the repository 
+git add .
+# Commit changes with message with current date stamp
+git commit -m "Updated dot files on `date +'%d-%m-%Y %H:%M:%S'`"
+# Push changes towards GitHub
+git push -u origin main
+cd $HOME/src/ansible/
+# Add all files to the repository 
+git add .
+# Commit changes with message with current date stamp
+git commit -m "Updated dot files on `date +'%d-%m-%Y %H:%M:%S'`"
+# Push changes towards GitHub
+git push -u origin main

@@ -1,24 +1,25 @@
-cp ~/.tmux.conf /mnt/c/Users/jthig/
-cp ~/.tmux.conf /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/
-cp ~/.tmux.conf /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/
-cp ~/.tmux.conf ~/src/memories-for-tomorrow/files/
-cp ~/.tmux.conf ~/src/ansible/data/
-cp ~/.tmux.conf ~/src/secret_stuff/
+#!/bin/bash 
+
+cp $HOME/.tmux.conf /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/
+cp $HOME/.tmux.conf /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/
+cp $HOME/.tmux.conf $HOME/src/memories-for-tomorrow/files/
+cp $HOME/.tmux.conf $HOME/src/ansible/data/
+cp $HOME/.tmux.conf $HOME/src/secret_stuff/
 # Add all files to the repository 
-cd ~/src/memories-for-tomorrow/
+cd $HOME/src/memories-for-tomorrow/
 git add .
 # Commit changes with message with current date stamp
 git commit -m "tmux.conf files on `date +'%d-%m-%Y %H:%M:%S'`"
 # Push changes towards GitHub
 git push -u origin master
-cd ~/src/secret_stuff/
+cd $HOME/src/secret_stuff/
 # Add all files to the repository 
 git add .
 # Commit changes with message with current date stamp
 git commit -m "tmux.conf files on `date +'%d-%m-%Y %H:%M:%S'`"
 # Push changes towards GitHub
 git push -u origin main
-cd ~/src/ansible/
+cd $HOME/src/ansible/
 # Add all files to the repository 
 git add .
 # Commit changes with message with current date stamp
