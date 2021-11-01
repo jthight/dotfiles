@@ -174,6 +174,7 @@ fi
 
 #clear
 printf "\n"
+printf "   %s\n" "Date:          $(date)"
 # Check Internet status 
 case "$(curl -s --max-time 2 -I http://google.com | sed 's/^[^ ]*  *\([0-9]\).*/\1/; 1q')" in
   [23]) printf "   %s\n" "Internet IP:   $(curl -s ipinfo.io/ip)";;
@@ -181,7 +182,6 @@ case "$(curl -s --max-time 2 -I http://google.com | sed 's/^[^ ]*  *\([0-9]\).*/
   *) printf "   %s\n" "Internet IP:   Internet Offline";;
 esac
 printf "   %s\n" "OS Distro:     $_disto"
-printf "   %s\n" "Date:          $(date)"
 if [ "$OS" != "Windows_NT" ]; then
   printf "   %s\n" "User:          $(echo $USER)"
   printf "   %s\n" "Uptime:        $(uptime -p)"
