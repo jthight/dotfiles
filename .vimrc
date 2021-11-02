@@ -139,7 +139,7 @@ function! LOAD_plugins()
   call minpac#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context.
   call minpac#add('ervandew/supertab') " allows uses <Tab> for all insert completion needs
   call minpac#add('vim-scripts/ZoomWin') " use <c-w>o to Zoom In or Zoom Out
-  call minpac#add('kana/vim-textobj-entire') " provide text objects (ae and ie by default)
+  call minpac#add('kana/vim-textobj-user') " Create your own text objects
 
   " Plugin commands
   map <leader>pu :call minpac#update()<CR>
