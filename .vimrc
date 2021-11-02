@@ -1,7 +1,7 @@
 " File: $MYVIMRC
 " Author: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 1, 2021
+" Last Modified: November 2, 2021
 " Use "/MAIN" to go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
 " automatically when .vimrc is found. However, this might be useful
@@ -139,6 +139,7 @@ function! LOAD_plugins()
   call minpac#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context.
   call minpac#add('ervandew/supertab') " allows uses <Tab> for all insert completion needs
   call minpac#add('vim-scripts/ZoomWin') " use <c-w>o to Zoom In or Zoom Out
+  call minpac#add('kana/vim-textobj-entire') " provide text objects (ae and ie by default)
 
   " Plugin commands
   map <leader>pu :call minpac#update()<CR>
