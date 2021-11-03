@@ -33,6 +33,9 @@ function! IOS_code()
   " iplug add https://github.com/honza/vim-snippets.git
   " iplug add https://github.com/jeffkreeftmeijer/vim-numbertoggle.git
   " iplug add https://github.com/junegunn/vim-easy-align.git
+  " iplug add https://github.com/kana/vim-textobj-user.git
+  " iplug add https://github.com/kana/vim-textobj-entire.git
+  " iplug add https://github.com/kana/vim-textobj-line.git
   " iplug add https://github.com/kana/vim-textobj-indent.git
   " iplug add https://github.com/preservim/nerdcommenter.git
   " iplug add https://github.com/preservim/nerdtree.git
