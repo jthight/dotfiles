@@ -1,7 +1,7 @@
 " File: $MYVIMRC
 " Author: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 2, 2021
+" Last Modified: November 3, 2021
 " Use "/MAIN" to go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
 " automatically when .vimrc is found. However, this might be useful
