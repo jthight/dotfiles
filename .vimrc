@@ -22,7 +22,7 @@ function! IOS_code()
   " "Hello IOS User"
   " Add any system spacific startup vim commands to this file.
   " They will be pulled in a startup
-  map <leader>h :echo "Hello IOS World, Version =" editver<CR>
+  map <leader>h :echo "Hello IOS World, vimrc Version =" editver<CR>
   "____________________________________________________________________________
   " IOS spacific commands
   map <leader>p :iplug update<cr>
@@ -160,7 +160,7 @@ function! LINUX_code()
   " "Hello Linux User"
   " Add any system spacific startup vim commands to this file.
   " They will be pulled in a startup
-  map <leader>h :echo "Hello Linux World, Version =" editver<CR>
+  map <leader>h :echo "Hello Linux World, vimrc Version =" editver<CR>
   "____________________________________________________________________________
   " Linux system spacific stuff
   "
@@ -197,7 +197,7 @@ function! WIN_coce()
   " "Hello Windows User"
   " Add any system spacific startup vim commands to this file.
   " They will be pulled in a startup
-  map <leader>h :echo "Hello Windows World, Version =" editver<CR>
+  map <leader>h :echo "Hello Windows World, vimrc Version =" editver<CR>
   "____________________________________________________________________________
   " windows spacific commands
   "
