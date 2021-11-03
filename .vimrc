@@ -68,35 +68,7 @@ function! LOAD_plugins()
   call minpac#add('kana/vim-textobj-user') " Create your own text objects
   call minpac#add('kana/vim-textobj-indent') " Create your own text objects
   call minpac#add('kana/vim-textobj-entire') " Create your own text objects
-  " Local vimrc to load additional code
-  map <leader>to :call textobj#user#plugin('line', {
-  \   '-': {
-  \     'select-a-function': 'CurrentLineA',
-  \     'select-a': 'al',
-  \     'select-i-function': 'CurrentLineI',
-  \     'select-i': 'il',
-  \   },
-  \ })<CR>
-
-  function! CurrentLineA()
-    normal! 0
-    let head_pos = getpos('.')
-    normal! $
-    let tail_pos = getpos('.')
-    return ['v', head_pos, tail_pos]
-  endfunction
-
-  function! CurrentLineI()
-    normal! ^
-    let head_pos = getpos('.')
-    normal! g_
-    let tail_pos = getpos('.')
-    let non_blank_char_exists_p = getline('.')[head_pos[2] - 1] !~# '\s'
-    return
-    \ non_blank_char_exists_p
-    \ ? ['v', head_pos, tail_pos]
-    \ : 0
-  endfunction
+  call minpac#add('kana/vim-textobj-line') " Create your own text objects
   call minpac#add('vim-jp/syntax-vim-ex')
   call minpac#add('adelarsq/vim-matchit')
   call minpac#add('altercation/vim-colors-solarized')
