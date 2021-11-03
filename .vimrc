@@ -2,6 +2,7 @@
 " Author: John Hight
 " Description: vimrc for All systems
 " Last Modified: November 3, 2021
+let editver = "20211103"
 " Use "/MAIN" to go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
 " automatically when .vimrc is found. However, this might be useful
@@ -21,7 +22,7 @@ function! IOS_code()
   " "Hello IOS User"
   " Add any system spacific startup vim commands to this file.
   " They will be pulled in a startup
-  map <leader>h :echo "Hello IOS World"<CR>
+  map <leader>h :echo "Hello IOS World, Version =" editver<CR>
   "____________________________________________________________________________
   " IOS spacific commands
   map <leader>p :iplug update<cr>
@@ -159,7 +160,7 @@ function! LINUX_code()
   " "Hello Linux User"
   " Add any system spacific startup vim commands to this file.
   " They will be pulled in a startup
-  map <leader>h :echo "Hello Linux World"<CR>
+  map <leader>h :echo "Hello Linux World, Version =" editver<CR>
   "____________________________________________________________________________
   " Linux system spacific stuff
   "
@@ -196,7 +197,7 @@ function! WIN_coce()
   " "Hello Windows User"
   " Add any system spacific startup vim commands to this file.
   " They will be pulled in a startup
-  map <leader>h :echo "Hello Windows World"<CR>
+  map <leader>h :echo "Hello Windows World, Version =" editver<CR>
   "____________________________________________________________________________
   " windows spacific commands
   "
