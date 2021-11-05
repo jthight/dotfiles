@@ -1,8 +1,8 @@
 " File: $MYVIMRC
 " Author: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 3, 2021
-let editver = "20211103"
+" Last Modified: November 5, 2021
+let editver = "20211105"
 " Use "/MAIN" to go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
 " automatically when .vimrc is found. However, this might be useful
@@ -44,6 +44,7 @@ function! IOS_code()
   " iplug add https://github.com/tpope/vim-commentary.git
   " iplug add https://github.com/tpope/vim-repeat.git
   " iplug add https://github.com/tpope/vim-surround.git
+  " iplug add https://github.com/tpope/vim-unimpaired.git
   " iplug add https://github.com/vim-airline/vim-airline-themes.git
   " iplug add https://github.com/vim-airline/vim-airline.git
   " iplug add https://github.com/vim-scripts/AutoComplPop.git
@@ -83,6 +84,7 @@ function! LOAD_plugins()
   call minpac#add('tpope/vim-commentary') " For Commenting gcc & gc
   call minpac#add('jeffkreeftmeijer/vim-numbertoggle')
   call minpac#add('tpope/vim-repeat')
+  call minpac#add('tpope/vim-unimpaired')
   if has("linux")
     call minpac#add('tpope/vim-fugitive')
     map <leader>g :Git 
@@ -256,9 +258,19 @@ endfunction
 syntax enable
 filetype plugin on
 filetype plugin indent on
+" another way to command mode
+nnoremap <silent> [[ :
+" will recall path in command mode eg: :e %%
+cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+" Stop using the arrow Keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " Search and fins files
 set path+=**
+set path+=$HOME/**
 set wildmenu " Tab through menu
 " - Hit tab to :find by partial match
 " - Use * to make it fuzzy

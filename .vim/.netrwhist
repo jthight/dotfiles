@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/john/code'
 let g:netrw_dirhist_0='/home/john/src/memories-for-tomorrow/tasks'
 let g:netrw_dirhist_9='/home/john'
 let g:netrw_dirhist_8='/mnt/c/Users/jthig'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_5='/mnt/c/Users'
 let g:netrw_dirhist_4='/mnt/c'
 let g:netrw_dirhist_3='/mnt'
 let g:netrw_dirhist_2='/'
-let g:netrw_dirhist_1='/home'
