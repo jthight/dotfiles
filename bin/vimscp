@@ -14,8 +14,8 @@ cp $HOME/.vim/UltiSnips/* $HOME/src/memories-for-tomorrow/files/.vim/UltiSnips/
 cp $HOME/.vim/UltiSnips/* $HOME/src/ansible/data/.vim/UltiSnips/
 cp $HOME/.vim/UltiSnips/* /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/UltiSnips/
 cp $HOME/.vim/UltiSnips/* /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/UltiSnips/
-cp /mnt/c/Users/jthig/plugcheetsheet /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/
-cp /mnt/c/Users/jthig/plugcheetsheet /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/
+cp /mnt/c/Users/jthig/plugcheetsheet.txt /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/
+cp /mnt/c/Users/jthig/plugcheetsheet.txt /mnt/c/Users/jthig/OneDrive/Documents/dotfiles/
 cp $HOME/.vim/thesaurus/* $HOME/src/memories-for-tomorrow/files/.vim/thesaurus/
 cp $HOME/.vim/thesaurus/* $HOME/src/ansible/data/.vim/thesaurus/
 cp $HOME/.vim/thesaurus/* /mnt/c/Users/jthig/Dropbox/Documents/dotfiles/thesaurus/
