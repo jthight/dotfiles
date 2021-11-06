@@ -61,6 +61,7 @@ function! IOS_code()
   map <leader>v "+gP
   map <leader>x "+x
 endfunction
+
 " PLUGINS:
 " Common function to load plugins
 "
@@ -156,6 +157,7 @@ function! LOAD_plugins()
   map <leader>ps :call minpac#status()<CR>
 
 endfunction  
+
   "
 " LINUX:
 function! LINUX_code()
@@ -186,6 +188,7 @@ function! LINUX_code()
     let g:solarized_visibility="high"
     colorscheme solarized
   endif
+
   " Run Python3 with <F9>
   autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
   " load .vimrc.local if present
@@ -193,6 +196,7 @@ function! LINUX_code()
     source $HOME/.vimrc.local
   endif
 endfunction
+
 "
 " WINDOWS:
 function! WIN_coce()
@@ -234,6 +238,7 @@ function! WIN_coce()
     set guicursor+=n-v-c:blinkon0
     set guicursor+=i:blinkwait10
   endif
+
   " Set clipboard for Windows 
   set clipboard=unnamed
   map <leader>c "+y
@@ -243,38 +248,47 @@ function! WIN_coce()
     set pythonthreehome=C:\bin\python3
     set pythonthreedll=C:\bin\python3\python39.dll
   endif
+
   " Check to avoid UltiSnips Deprecation Warning imp module is deprecated
   if has('python3')
     silent! python3 1
   endif
+
   " load _vimrc.local if present
   if !empty(glob("$HOME/_vimrc.local"))
     source $HOME/_vimrc.local
   endif
 endfunction
 
+
 " MAIN_GENERAL_CODE:
 " Turn on syntax highlighting
 syntax enable
 filetype plugin on
 filetype plugin indent on
+
+" COMAND MODE:
 " another way to command mode
 nnoremap <silent> [[ :
 " will recall path in command mode eg: :e %%
 cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" KEYS:
 " Stop using the arrow Keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" Search and fins files
+" PATH:
+" Search and find files
 set path+=**
 set path+=$HOME/**
 set wildmenu " Tab through menu
 " - Hit tab to :find by partial match
 " - Use * to make it fuzzy
 
+" TAGS:
 " Create the `tags` file (may need to install ctags first)
 command! MakeTags !ctags -R .
 " - Use ^] to jump to tag under cursor
@@ -296,17 +310,15 @@ set completeopt=menuone,longest
 " Security
 set modelines=0
 
-" Show line numbers
+" LINE NUMBERING: Show line numbers
 set number
 set relativenumber
 
-" Show file stats
-set ruler
 
 " Blink cursor on error instead of beeping (grr)
 set visualbell
 
-" Encoding
+" ENCODING:
 set encoding=utf-8
 
 " Whitespace
@@ -336,24 +348,25 @@ nnoremap k gk
 " Allow hidden buffers
 set hidden
 
-" Rendering
+" RENDERING:
 set ttyfast
 
-" Status bar
+" STATUS BAR:
 set laststatus=2
-
-" Last line
+" Show file stats
+set ruler
+" last line
 set showmode
 set showcmd
 
-" Searching
+" SEARCHING:
 set nohlsearch
 set incsearch
 set ignorecase
 set smartcase
 set showmatch
 
-" leader key mapping
+" LEADER KEY Mapping:
 "
 " Pick a leader key
 let mapleader = " "
@@ -384,6 +397,8 @@ else
   map <leader>7 :UltiSnipsEdit<CR> "Edit snippets
 endif
 map <leader>8 :UltiSnipsEdit!<CR> "Edit snippets
+
+" ESC:
 " map jk or jj as <esc> key when in insert mode
 inoremap jk <esc>
 inoremap jj <esc>
@@ -393,7 +408,9 @@ inoremap jj <esc>
 " inoremap <C-l> <Right>
 " inoremap <C-j> <C-o>gj
 inoremap <C-s> <ESC>A
-"Make working with multiple buffers less of a pain
+
+" WINDOWS:
+" Make working with multiple buffers less of a pain
 set splitright
 set splitbelow
 nnoremap <C-w>v :vnew<cr>
@@ -401,20 +418,23 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
+
+" CASE:
 " Change a word to upper CASE in insert mode
 inoremap <C-U> <esc>viwUea
 
+" FUNCTION KEYS:
 " Map Function Keys <FN> 
 " <F1> mapped to :help by default
 
-" Visualize tabs and newlines
+" VISUALIZE: tabs and newlines
 set listchars=tab:▸\ ,eol:¬
 " Uncomment this to enable by default:
 " set list " To enable by default
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
-" Load system spacific vim directives and PlugIns
+" LOAD SYSTEM SPECIFIC CODE: Load system spacific vim directives and PlugIns
 if has("win32")
   call WIN_coce()
 endif
@@ -426,8 +446,7 @@ if has("linux") || has("unix")
   endif
 endif
 
-" autocmd VimEnter * silent NERDTree | wincmd p
-" FILE_BROWSER:
+" NERDTree: autocmd VimEnter * silent NERDTree | wincmd p
 nnoremap \g :NERDTreeFocus<CR>
 if has("win32")
   nnoremap \n :NERDTree C:\
@@ -453,8 +472,8 @@ endif
 " - <CR>/v/t to open in an h-split/v-split/tab
 " - check |netrw-browse-maps| for more mappings
 
-" NERDTree Like with netrw
-" Toggle Vexplore with Ctrl-E
+" NetrwTreeListing: Like with netrw
+" Toggle Vexplore with Ctrl-G
 " from https://stackoverflow.com/questions/5006950/setting-netrw-like-nerdtree/5636941
 function! ToggleVExplorer()
   if exists("t:expl_buf_num")
@@ -484,13 +503,13 @@ let g:NERDSpaceDelims = 1
 let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
-
 " Sort Motion.vim 'christoomey/vim-sort-motion' 
 let g:sort_motion_flags = 'ui'
 let g:sort_motion_visual_block_command = 'Vissort'
 
-"SNIPPS:
-" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" SNIPPS:
+" Trigger configuration. You need to change this to something other than <tab> 
+" if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -507,12 +526,12 @@ let g:snips_github="https://github.com/jthight"
 " let g:UltiSnipsExpandTrigger="<tab>"
 " list all snippets for current filetype
 
-" Support code for Plugs
+" EasyAlign: Support code for Plugs
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-" Status bar look
+" AirLine: Status bar look
 let g:airline_theme='apprentice'
 
