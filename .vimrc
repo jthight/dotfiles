@@ -1,17 +1,13 @@
 " File: $MYVIMRC
 " Author: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 5, 2021
-let editver = "20211105"
-" Use "/MAIN" to go to GENERAL_CODE
+" Last Modified: November 6, 2021
+let editver = "20211106"
+
+" Search For MAIN_GENERAL_CODE: To go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
 " automatically when .vimrc is found. However, this might be useful
 " when you execute `vim -u .vimrc` from the command line.
-if &compatible
-  " `:set nocp` has many side effects. Therefore this should be done
-  " only when 'compatible' is set.
-  set nocompatible
-endif
 
 " OS_FUNCTIONS:
 " Functions to load OS spacific vim code
@@ -262,6 +258,12 @@ endfunction
 
 
 " MAIN_GENERAL_CODE:
+" code that applies to all 
+if &compatible
+  " `:set nocp` has many side effects. Therefore this should be done
+  " only when 'compatible' is set.
+  set nocompatible
+endif
 " Turn on syntax highlighting
 syntax enable
 filetype plugin on
@@ -313,7 +315,6 @@ set modelines=0
 " LINE NUMBERING: Show line numbers
 set number
 set relativenumber
-
 
 " Blink cursor on error instead of beeping (grr)
 set visualbell
