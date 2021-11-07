@@ -93,6 +93,7 @@ function! LOAD_plugins()
     call minpac#add('christoomey/vim-tmux-navigator')
     call minpac#add('christoomey/vim-tmux-runner')
     let g:tmux_navigator_no_mappings = 1
+    let g:VtrUseVtrMaps = 1
     nnoremap <silent> <C-H> :TmuxNavigateLeft<cr>
     nnoremap <silent> <C-J> :TmuxNavigateDown<cr>
     nnoremap <silent> <C-K> :TmuxNavigateUp<cr>
@@ -435,6 +436,7 @@ if !has("linux")
   nnoremap <C-h> <C-w>h
   nnoremap <C-l> <C-w>l
   nnoremap <C-j> <C-w>j
+  nnoremap <C-\> <C-w>p
 endif
 
 " CASE:
