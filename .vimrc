@@ -76,12 +76,12 @@ function! LOAD_plugins()
   call minpac#add('altercation/vim-colors-solarized')
   call minpac#add('junegunn/vim-easy-align')
   call minpac#add('tyru/open-browser.vim') " opens url in browser
-  call minpac#add('tpope/vim-surround') " Surrounding ysw)
-  call minpac#add('preservim/nerdcommenter') " Comment test in/out
-  call minpac#add('tpope/vim-commentary') " For Commenting gcc & gc
   call minpac#add('jeffkreeftmeijer/vim-numbertoggle')
+  call minpac#add('tpope/vim-surround') " Surrounding ysw)
+  call minpac#add('tpope/vim-commentary') " For Commenting gcc & gc
   call minpac#add('tpope/vim-repeat')
   call minpac#add('tpope/vim-unimpaired')
+  call minpac#add('tpope/vim-speeddating')
   if has("linux")
     call minpac#add('tpope/vim-fugitive')
     map <leader>g :Git 
@@ -89,6 +89,16 @@ function! LOAD_plugins()
   call minpac#add('vim-scripts/ReplaceWithRegister')
   call minpac#add('christoomey/vim-titlecase')
   call minpac#add('christoomey/vim-sort-motion')
+  if has("linux")
+    call minpac#add('christoomey/vim-tmux-navigator')
+    call minpac#add('christoomey/vim-tmux-runner')
+    let g:tmux_navigator_no_mappings = 1
+    nnoremap <silent> <C-H> :TmuxNavigateLeft<cr>
+    nnoremap <silent> <C-J> :TmuxNavigateDown<cr>
+    nnoremap <silent> <C-K> :TmuxNavigateUp<cr>
+    nnoremap <silent> <C-L> :TmuxNavigateRight<cr>
+    nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+  endif
   call minpac#add('vim-scripts/AutoComplPop')
   call minpac#add('SirVer/ultisnips')
   call minpac#add('honza/vim-snippets')
@@ -99,12 +109,13 @@ function! LOAD_plugins()
   call minpac#add('vim-airline/vim-airline')
   call minpac#add('vim-airline/vim-airline-themes')
   call minpac#add('chriskempson/base16-vim')
+  call minpac#add('preservim/nerdcommenter') " Comment test in/out
   call minpac#add('preservim/nerdtree')
   call minpac#add('raimondi/delimitmate')
-  " Additional plugins here.
+  " additional plugins here.
   call minpac#add('scrooloose/syntastic')
   set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%{syntasticstatuslineflag()}
   set statusline+=%*
   let g:syntastic_always_populate_loc_list = 1
   let g:syntastic_auto_loc_list = 1
@@ -112,18 +123,17 @@ function! LOAD_plugins()
   let g:syntastic_check_on_wq = 0
   let g:syntastic_python_checkers = ['pylint']
   call minpac#add('haya14busa/incsearch.vim')
-  map /  <Plug>(incsearch-forward)
-  map ?  <Plug>(incsearch-backward)
-  map g/ <Plug>(incsearch-stay)
+  map /  <plug>(incsearch-forward)
+  map ?  <plug>(incsearch-backward)
+  map g/ <plug>(incsearch-stay)
   " set hlsearch
   let g:incsearch#auto_nohlsearch = 1
-  map n  <Plug>(incsearch-nohl-n)
-  map N  <Plug>(incsearch-nohl-N)
-  map *  <Plug>(incsearch-nohl-*)
-  map #  <Plug>(incsearch-nohl-#)
-  map g* <Plug>(incsearch-nohl-g*)
-  map g# <Plug>(incsearch-nohl-g#)
-  call minpac#add('tpope/vim-speeddating')
+  map n  <plug>(incsearch-nohl-n)
+  map n  <plug>(incsearch-nohl-n)
+  map *  <plug>(incsearch-nohl-*)
+  map #  <plug>(incsearch-nohl-#)
+  map g* <plug>(incsearch-nohl-g*)
+  map g# <plug>(incsearch-nohl-g#)
   call minpac#add('kien/ctrlp.vim')
   let g:ctrlp_map = '<c-q>'
   let g:ctrlp_cmd = 'CtrlP'
@@ -144,9 +154,6 @@ function! LOAD_plugins()
     \ }
   " search the nearest ancestor that contains .git, .hg, .svn
   let g:ctrlp_working_path_mode = 2
-  if has("linux")
-    call minpac#add('preservim/vimux')
-  endif
   call minpac#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context.
   call minpac#add('ervandew/supertab') " allows uses <Tab> for all insert completion needs
   call minpac#add('vim-scripts/ZoomWin') " use <c-w>o to Zoom In or Zoom Out
@@ -422,10 +429,13 @@ inoremap <C-s> <ESC>A
 set splitright
 set splitbelow
 nnoremap <C-w>v :vnew<cr>
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-nnoremap <C-j> <C-w>j
+nnoremap <C-w>s :new<cr>
+if !has("linux")
+  nnoremap <C-k> <C-w>k
+  nnoremap <C-h> <C-w>h
+  nnoremap <C-l> <C-w>l
+  nnoremap <C-j> <C-w>j
+endif
 
 " CASE:
 " Change a word to upper CASE in insert mode
