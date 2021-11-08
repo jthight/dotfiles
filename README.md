@@ -8,6 +8,6 @@ My whole hearted thanks to this community.
 [thoughtbot]: https://www.youtube.com/user/ThoughtbotVideo
 
 ## Usage
-Please fell free to use my dotfiles. I think the best way is to start with a 
-and edit it to meet my needs. Please give me feedback if you find a issue or 
-just want to give me a thumbs up.
+Please fell free to use my dotfiles. I think the best way to start is to use 
+snips and ideas and then edit them to meet your needs. Please give me feedback 
+if you find a issue or just want to comment or give me a thumbs up.
