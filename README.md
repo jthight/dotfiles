@@ -20,3 +20,5 @@ if you find a issue or just want to comment or give me a thumbs up.
 - [Tmux Cheat Sheet](https://tmuxcheatsheet.com/)
 - [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
 - [Printable Markdown Cheat Sheet](https://opensource.com/downloads/cheat-sheet-markdown)
+- [Bash Scripting Cheat Sheet](https://devdojo.com/bobbyiliev/the-only-bash-scripting-cheat-sheet-that-you-will-ever-need)
+- [Bash scripting cheatsheet](https://devhints.io/bash)
