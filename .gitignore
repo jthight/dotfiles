@@ -1,5 +1,6 @@
 # This file .gitignore is for my linux dotfiles and supporting scripts
 #
+.swo
 .netrwhist
 .vim/.netrwhist
 .git
