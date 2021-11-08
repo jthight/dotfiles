@@ -1,8 +1,8 @@
 " File: $MYVIMRC
 " Editor: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 7, 2021
-let editver = "20211107"
+" Last Modified: November 8, 2021
+let editver = "20211108"
 
 " Search For MAIN_GENERAL_CODE: To go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
@@ -100,6 +100,8 @@ function! LOAD_plugins()
     nnoremap <silent> <C-L> :TmuxNavigateRight<cr>
     nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
   endif
+  call minpac#add('christoomey/vim-quicklink')
+  call minpac#add('mattn/webapi-vim')
   call minpac#add('vim-scripts/AutoComplPop')
   call minpac#add('SirVer/ultisnips')
   call minpac#add('honza/vim-snippets')
