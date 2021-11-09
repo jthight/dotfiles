@@ -60,7 +60,6 @@ endfunction
 
 " PLUGINS:
 " Common function to load plugins
-"
 function! LOAD_plugins()
   " Try to load minpac.
   packadd minpac
@@ -165,10 +164,8 @@ function! LOAD_plugins()
   map <leader>pu :call minpac#update()<CR>
   map <leader>pc :call minpac#clean()<CR>
   map <leader>ps :call minpac#status()<CR>
-
 endfunction  
 
-  "
 " LINUX:
 function! LINUX_code()
   " "Hello Linux User"
@@ -207,7 +204,6 @@ function! LINUX_code()
   endif
 endfunction
 
-"
 " WINDOWS:
 function! WIN_coce()
   " "Hello Windows User"
@@ -270,7 +266,6 @@ function! WIN_coce()
   endif
 endfunction
 
-
 " MAIN_GENERAL_CODE:
 " code that applies to all 
 if &compatible
@@ -282,6 +277,7 @@ endif
 syntax enable
 filetype plugin on
 filetype plugin indent on
+set foldmethod=indent   " fold based on indent"
 
 " COMAND MODE:
 " another way to command mode
@@ -519,34 +515,34 @@ endfunction
 map <silent> <C-G> :call ToggleVExplorer()<CR>
 
 " NERDCommenter: settings
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-" Sort Motion.vim 'christoomey/vim-sort-motion' 
-let g:sort_motion_flags = 'ui'
-let g:sort_motion_visual_block_command = 'Vissort'
+  " Add spaces after comment delimiters by default
+  let g:NERDSpaceDelims = 1
+  " Allow commenting and inverting empty lines (useful when commenting a region)
+  let g:NERDCommentEmptyLines = 1
+  " Enable trimming of trailing whitespace when uncommenting
+  let g:NERDTrimTrailingWhitespace = 1
+  " Sort Motion.vim 'christoomey/vim-sort-motion' 
+  let g:sort_motion_flags = 'ui'
+  let g:sort_motion_visual_block_command = 'Vissort'
 
 " SNIPPS:
-" Trigger configuration. You need to change this to something other than <tab> 
-" if you use one of the following:
-" - https://github.com/Valloric/YouCompleteMe
-" - https://github.com/nvim-lua/completion-nvim
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
-let g:UltiSnipsListSnippets="<C-L>"
-let g:UltiSnipsSnippetsDirectories=["UltiSnips"]
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsEnableSnipMate=1
-let g:snips_author="John Hight"
-let g:snips_email="john@hight.net"
-let g:snips_github="https://github.com/jthight"
-" Key to activate snipps
-" let g:UltiSnipsExpandTrigger="<tab>"
-" list all snippets for current filetype
+  " Trigger configuration. You need to change this to something other than <tab> 
+  " if you use one of the following:
+  " - https://github.com/Valloric/YouCompleteMe
+  " - https://github.com/nvim-lua/completion-nvim
+  let g:UltiSnipsExpandTrigger="<tab>"
+  let g:UltiSnipsJumpForwardTrigger="<tab>"
+  let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+  let g:UltiSnipsListSnippets="<C-L>"
+  let g:UltiSnipsSnippetsDirectories=["UltiSnips"]
+  let g:UltiSnipsEditSplit="vertical"
+  let g:UltiSnipsEnableSnipMate=1
+  let g:snips_author="John Hight"
+  let g:snips_email="john@hight.net"
+  let g:snips_github="https://github.com/jthight"
+  " Key to activate snipps
+  " let g:UltiSnipsExpandTrigger="<tab>"
+  " list all snippets for current filetype
 
 " EasyAlign: Support code for Plugs
 " Start interactive EasyAlign in visual mode (e.g. vipga)
