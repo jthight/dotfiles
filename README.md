@@ -1,7 +1,7 @@
 # dotfiles
 My dotfiles and supporting scripts. These dotfiles are my everyday files I use 
 to do my tasks on linux, iPad, and Windows 10 systems. They are a merge of many 
-dotfiles and ideas I've picked up via [GitHub] and [thoughtbot] on YouTube.  
+dotfiles and ideas I've picked up via [GitHub] and [thoughtbot] on YouTube. 
 My whole hearted thanks to this community.
 
 [GitHub]: https://github.com/
