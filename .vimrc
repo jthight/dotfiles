@@ -1,8 +1,8 @@
 " File: $MYVIMRC
 " Editor: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 8, 2021
-let editver = "20211108"
+" Last Modified: November 10, 2021
+let editver = "20211110"
 
 " Search For MAIN_GENERAL_CODE: To go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
@@ -159,6 +159,11 @@ function! LOAD_plugins()
   call minpac#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context.
   call minpac#add('ervandew/supertab') " allows uses <Tab> for all insert completion needs
   call minpac#add('vim-scripts/ZoomWin') " use <c-w>o to Zoom In or Zoom Out
+  call minpac#add('xolox/vim-misc') " required for xolox/vim-notes
+  call minpac#add('xolox/vim-notes') " Note taking in vim :Note
+  if !empty(glob("$HOME/Dropbox/Notes/README.md"))
+    :let g:notes_directories = ['$HOME/Dropbox/Notes']
+  endif
 
   " Plugin commands
   map <leader>pu :call minpac#update()<CR>
