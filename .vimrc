@@ -294,6 +294,9 @@ noremap <Right> <Nop>
 " Visual Move
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+" Insert an empty new line in normal mode
+nnoremap [o o<Esc>0D
+nnoremap ]o O<Esc>0D
 
 " PATH:
 " Search and find files
