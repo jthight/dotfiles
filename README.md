@@ -24,9 +24,9 @@ if you find a issue or just want to comment or give me a thumbs up.
 - [Bash scripting cheatsheet](https://devhints.io/bash)
 
 ---
-# PlugIns
+## PlugIns
 
-## Plugins Installed
+### Plugins Installed
 
 - [adelarsq/vim-matchit](https://github.com/adelarsq/vim-matchit)
 - [altercation/vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
