@@ -174,6 +174,10 @@ function! LOAD_plugins()
   endif
   call minpac#add('chrisbra/unicode.vim') " Unicode
   nmap ga <Plug>(UnicodeGA)
+  nnoremap <leader>ut :UnicodeTable<CR>
+  nnoremap <leader>us :UnicodeSearch 
+  nnoremap <leader>ud :Digraphs
+  nnoremap <leader>un :UnicodeName<CR>
 
   " Plugin commands
   map <leader>pu :call minpac#update()<CR>
