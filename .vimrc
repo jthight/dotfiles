@@ -161,9 +161,18 @@ function! LOAD_plugins()
   call minpac#add('vim-scripts/ZoomWin') " use <c-w>o to Zoom In or Zoom Out
   call minpac#add('xolox/vim-misc') " required for xolox/vim-notes
   call minpac#add('xolox/vim-notes') " Note taking in vim :Note
+  vmap <leader>nv :NoteFromSelectedText<CR>
+  map <leader>nn :Note 
+  map <leader>nd :DeleteNote
+  map <leader>ns :SearchNotes /TODO
+  map <leader>nr :RelatedNotes<CR>
+  map <leader>nt :RecentNotes<CR>
+  let g:notes_suffix = '.txt'
   if !empty(glob("$HOME/Dropbox/Notes/README.md"))
-    :let g:notes_directories = ['$HOME/Dropbox/Notes']
+    let g:notes_directories = ['$HOME/Dropbox/Notes']
   endif
+  call minpac#add('chrisbra/unicode.vim') " Unicode
+  nmap ga <Plug>(UnicodeGA)
 
   " Plugin commands
   map <leader>pu :call minpac#update()<CR>
@@ -554,9 +563,9 @@ map <silent> <C-G> :call ToggleVExplorer()<CR>
 
 " EasyAlign: Support code for Plugs
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+xmap gA <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+nmap gA <Plug>(EasyAlign)
 
 " AirLine: Status bar look
 let g:airline_theme='apprentice'
