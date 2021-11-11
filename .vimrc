@@ -81,6 +81,7 @@ function! LOAD_plugins()
   call minpac#add('tpope/vim-repeat')
   call minpac#add('tpope/vim-unimpaired')
   call minpac#add('tpope/vim-speeddating')
+  call minpac#add('tpope/vim-sleuth')
   if has("linux")
     call minpac#add('tpope/vim-fugitive')
     map <leader>g :Git 
