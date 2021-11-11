@@ -37,7 +37,6 @@ if you find a issue or just want to comment or give me a thumbs up.
 - [christoomey/vim-titlecase](https://github.com/christoomey/vim-titlecase)
 - [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
 - [christoomey/vim-tmux-runner](https://github.com/christoomey/vim-tmux-runner)
-- [ervandew/supertab](https://github.com/ervandew/supertab)
 - [haya14busa/incsearch.vim](https://github.com/haya14busa/incsearch.vim)
 - [honza/vim-snippets](https://github.com/honza/vim-snippets)
 - [jeffkreeftmeijer/vim-numbertoggle](https://github.com/jeffkreeftmeijer/vim-numbertoggle)

@@ -158,7 +158,6 @@ function! LOAD_plugins()
   " search the nearest ancestor that contains .git, .hg, .svn
   let g:ctrlp_working_path_mode = 2
   call minpac#add('sickill/vim-pasta') " Pasting in Vim with indentation adjusted to destination context.
-  call minpac#add('ervandew/supertab') " allows uses <Tab> for all insert completion needs
   call minpac#add('vim-scripts/ZoomWin') " use <c-w>o to Zoom In or Zoom Out
   call minpac#add('xolox/vim-misc') " required for xolox/vim-notes
   call minpac#add('xolox/vim-notes') " Note taking in vim :Note
