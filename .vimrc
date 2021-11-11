@@ -162,7 +162,7 @@ function! LOAD_plugins()
   call minpac#add('vim-scripts/ZoomWin') " use <c-w>o to Zoom In or Zoom Out
   call minpac#add('xolox/vim-misc') " required for xolox/vim-notes
   call minpac#add('xolox/vim-notes') " Note taking in vim :Note
-  vmap <leader>nv :NoteFromSelectedText<CR>
+  vmap <leader>nv :SplitNoteFromSelectedText<CR>
   map <leader>nn :Note 
   map <leader>nd :DeleteNote
   map <leader>ns :SearchNotes /TODO
