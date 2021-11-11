@@ -530,7 +530,7 @@ function! ToggleVExplorer()
       let t:expl_buf_num = bufnr("%")
   endif
 endfunction
-map <silent> <C-G> :call ToggleVExplorer()<CR>
+nnoremap <silent> <C-G> :call ToggleVExplorer()<CR>
 
 " NERDCommenter: settings
   " Add spaces after comment delimiters by default
