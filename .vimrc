@@ -171,7 +171,7 @@ function! LOAD_plugins()
     let g:notes_directories = ['$HOME/Dropbox/Notes']
   endif
   call minpac#add('chrisbra/unicode.vim') " Unicode
-  nmap ga <Plug>(UnicodeGA)
+  nmap gz <Plug>(UnicodeGA)
   nnoremap <leader>ut :UnicodeTable<CR>
   nnoremap <leader>us :UnicodeSearch 
   nnoremap <leader>ud :Digraphs
@@ -585,9 +585,9 @@ nnoremap <silent> <C-G> :call ToggleVExplorer()<CR>
 
 " EasyAlign: Support code for Plugs
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap gA <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap gA <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " AirLine: Status bar look
 let g:airline_theme='apprentice'
