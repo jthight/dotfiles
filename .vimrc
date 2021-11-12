@@ -460,7 +460,7 @@ endif
 
 " CASE:
 " Change a word to upper CASE in insert mode
-inoremap <C-U> <esc>viwUea
+inoremap <C-U> <esc>g~iwea
 
 " FUNCTION KEYS:
 " Map Function Keys <FN> 
