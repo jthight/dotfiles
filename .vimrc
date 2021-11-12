@@ -1,18 +1,16 @@
 " File: $MYVIMRC
 " Editor: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 11, 2021
-let editver = "20211111"
+" Last Modified: November 12, 2021
+let editver = "20211112"
 
 " Search For MAIN_GENERAL_CODE: To go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
 " automatically when .vimrc is found. However, this might be useful
 " when you execute `vim -u .vimrc` from the command line.
 
-" OS_FUNCTIONS:
-" Functions to load OS spacific vim code
-"
 " IOS:
+" Load IOS code function {{{ "
 function! IOS_code()
   "" iPad spacific commands
   " "Hello IOS User"
@@ -57,9 +55,10 @@ function! IOS_code()
   map <leader>v "+gP
   map <leader>x "+x
 endfunction
+" }}} Load IOS code function "
 
 " PLUGINS:
-" Common function to load plugins
+" Load common PlugIns function {{{ "
 function! LOAD_plugins()
   " Try to load minpac.
   packadd minpac
@@ -183,8 +182,10 @@ function! LOAD_plugins()
   map <leader>pc :call minpac#clean()<CR>
   map <leader>ps :call minpac#status()<CR>
 endfunction  
+" }}} Load common PlugIns function "
 
 " LINUX:
+" Load Linux code function {{{ "
 function! LINUX_code()
   " "Hello Linux User"
   " Add any system spacific startup vim commands to this file.
@@ -221,8 +222,10 @@ function! LINUX_code()
     source $HOME/.vimrc.local
   endif
 endfunction
+" }}} Load Linux code function "
 
 " WINDOWS:
+" Load Windows code function {{{ "
 function! WIN_coce()
   " "Hello Windows User"
   " Add any system spacific startup vim commands to this file.
@@ -283,8 +286,10 @@ function! WIN_coce()
     source $HOME/_vimrc.local
   endif
 endfunction
+" }}} Load Windows code function "
 
 " MAIN_GENERAL_CODE:
+" Initial Settings {{{ "
 " code that applies to all 
 if &compatible
   " `:set nocp` has many side effects. Therefore this should be done
@@ -295,15 +300,16 @@ endif
 syntax enable
 filetype plugin on
 filetype plugin indent on
-set foldmethod=indent   " fold based on indent"
+set foldmethod=marker   " fold based on indent"
+" }}} Initial Settings "
 
+" KEYS:
+" Key Mapping {{{ "
 " COMAND MODE:
 " another way to command mode
 nnoremap <silent> [[ :
 " will recall path in command mode eg: :e %%
 cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" KEYS:
 " Stop using the arrow Keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -315,92 +321,9 @@ vnoremap K :m '<-2<CR>gv=gv
 " Insert an empty new line in normal mode
 nnoremap [oo o<Esc>0D
 nnoremap ]oo O<Esc>0D
-
-" PATH:
-" Search and find files
-set path+=**
-set path+=$HOME/**
-set wildmenu " Tab through menu
-" - Hit tab to :find by partial match
-" - Use * to make it fuzzy
-
-" TAGS:
-" Create the `tags` file (may need to install ctags first)
-command! MakeTags !ctags -R .
-" - Use ^] to jump to tag under cursor
-" - Use g^] for ambiguous tags
-" - Use ^t to jump back up the tag stack
-
-" AUTOCOMPLETE:
-" The good stuff is documented in |ins-completion|
-" HIGHLIGHTS:
-" - ^x^n for JUST this file
-" - ^x^f for filenames (works with our path trick!)
-" - ^x^] for tags only
-" - ^n for anything specified by the 'complete' option
-" NOW WE CAN:
-" - Use ^n and ^p to go back and forth in the suggestion list
-set complete+=kspell
-set completeopt=menuone,longest
-
-" Security
-set modelines=0
-
-" LINE NUMBERING: Show line numbers
-set number
-set relativenumber
-
-" Blink cursor on error instead of beeping (grr)
-set visualbell
-
-" ENCODING:
-set encoding=utf-8
-
-" Whitespace
-set nowrap
-" set textwidth=80
-" set colorcolumn=+5
-au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-set signcolumn=no " Hide error indicators on left column
-set formatoptions=tcqrn1
-set tabstop=2
-autocmd FileType python setlocal tabstop=2
-autocmd FileType yaml setlocal tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set noshiftround
-
-" Cursor motion
-set scrolloff=8
-set backspace=indent,eol,start
-set matchpairs+=<:> " use % to jump between pairs
-
 " Move up/down editor lines
 nnoremap j gj
 nnoremap k gk
-
-" Allow hidden buffers
-set hidden
-
-" RENDERING:
-set ttyfast
-
-" STATUS BAR:
-set laststatus=2
-" Show file stats
-set ruler
-" last line
-set showmode
-set showcmd
-
-" SEARCHING:
-set nohlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showmatch
-
 " LEADER KEY Mapping:
 "
 " Pick a leader key
@@ -460,11 +383,101 @@ endif
 
 " CASE:
 " Change a word to upper CASE in insert mode
-inoremap <C-U> <esc>g~iwea
+inoremap <C-U> <esc>gUiwea
 
 " FUNCTION KEYS:
 " Map Function Keys <FN> 
 " <F1> mapped to :help by default
+
+" }}} Key Mapping "
+
+" PATH:
+" Vim Path {{{ "
+" Search and find files
+set path+=**
+set path+=$HOME/**
+set wildmenu " Tab through menu
+" - Hit tab to :find by partial match
+" - Use * to make it fuzzy
+" }}} Vim Path "
+
+" TAGS:
+" MakeTags Command {{{ "
+" Create the `tags` file (may need to install ctags first)
+command! MakeTags !ctags -R .
+" - Use ^] to jump to tag under cursor
+" - Use g^] for ambiguous tags
+" - Use ^t to jump back up the tag stack
+" }}} MakeTags Command "
+
+" AUTOCOMPLETE:
+" Autocomplete Settings {{{ "
+" The good stuff is documented in |ins-completion|
+" HIGHLIGHTS:
+" - ^x^n for JUST this file
+" - ^x^f for filenames (works with our path trick!)
+" - ^x^] for tags only
+" - ^n for anything specified by the 'complete' option
+" - Use ^n and ^p to go back and forth in the suggestion list
+set complete+=kspell
+set completeopt=menuone,longest
+" }}} Autocomplete Settings "
+
+" SETTINGS:
+" General Vim Settings {{{ "
+" Security
+set modelines=0
+
+" LINE NUMBERING: Show line numbers
+set number
+set relativenumber
+
+" Blink cursor on error instead of beeping (grr)
+set visualbell
+
+" ENCODING:
+set encoding=utf-8
+
+" Whitespace
+set nowrap
+" set textwidth=80
+" set colorcolumn=+5
+au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+set signcolumn=no " Hide error indicators on left column
+set formatoptions=tcqrn1
+set tabstop=2
+autocmd FileType python setlocal tabstop=2
+autocmd FileType yaml setlocal tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set noshiftround
+
+" Cursor motion
+set scrolloff=8
+set backspace=indent,eol,start
+set matchpairs+=<:> " use % to jump between pairs
+
+" Allow hidden buffers
+set hidden
+
+" RENDERING:
+set ttyfast
+
+" STATUS BAR:
+set laststatus=2
+" Show file stats
+set ruler
+" last line
+set showmode
+set showcmd
+
+" SEARCHING:
+set nohlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
 
 " VISUALIZE: tabs and newlines
 set listchars=tab:▸\ ,eol:¬
@@ -472,8 +485,10 @@ set listchars=tab:▸\ ,eol:¬
 " set list " To enable by default
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
+" }}} General Vim Settings "
 
 " LOAD SYSTEM SPECIFIC CODE: Load system spacific vim directives and PlugIns
+" Load OS Code {{{ "
 if has("win32")
   call WIN_coce()
 endif
@@ -484,7 +499,10 @@ if has("linux") || has("unix")
     call LINUX_code()
   endif
 endif
+" }}} Load OS Code "
 
+" PLUGINS SETTINGS:
+" Plugin Related Settings {{{ "
 " NERDTree: autocmd VimEnter * silent NERDTree | wincmd p
 nnoremap \g :NERDTreeFocus<CR>
 if has("win32")
@@ -573,4 +591,4 @@ nmap gA <Plug>(EasyAlign)
 
 " AirLine: Status bar look
 let g:airline_theme='apprentice'
-
+" }}} Plugin Related Settings "
