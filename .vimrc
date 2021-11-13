@@ -111,7 +111,6 @@ function! LOAD_plugins()
   call minpac#add('vim-airline/vim-airline')
   call minpac#add('vim-airline/vim-airline-themes')
   call minpac#add('chriskempson/base16-vim')
-  call minpac#add('preservim/nerdcommenter') " Comment test in/out
   call minpac#add('preservim/nerdtree')
   call minpac#add('raimondi/delimitmate')
   " additional plugins here.
@@ -553,17 +552,6 @@ function! ToggleVExplorer()
   endif
 endfunction
 nnoremap <silent> <C-G> :call ToggleVExplorer()<CR>
-
-" NERDCommenter: settings
-  " Add spaces after comment delimiters by default
-  let g:NERDSpaceDelims = 1
-  " Allow commenting and inverting empty lines (useful when commenting a region)
-  let g:NERDCommentEmptyLines = 1
-  " Enable trimming of trailing whitespace when uncommenting
-  let g:NERDTrimTrailingWhitespace = 1
-  " Sort Motion.vim 'christoomey/vim-sort-motion' 
-  let g:sort_motion_flags = 'ui'
-  let g:sort_motion_visual_block_command = 'Vissort'
 
 " SNIPPS:
   " Trigger configuration. You need to change this to something other than <tab> 

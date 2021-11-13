@@ -50,7 +50,6 @@ if you find a issue or just want to comment or give me a thumbs up.
 - [mattn/webapi-vim](https://github.com/mattn/webapi-vim)
 - [prabirshrestha/async.vim](https://github.com/prabirshrestha/async.vim)
 - [prabirshrestha/vim-lsp](https://github.com/prabirshrestha/vim-lsp)
-- [preservim/nerdcommenter](https://github.com/preservim/nerdcommenter)
 - [preservim/nerdtree](https://github.com/preservim/nerdtree)
 - [raimondi/delimitmate](https://github.com/raimondi/delimitmate)
 - [scrooloose/syntastic](https://github.com/scrooloose/syntastic)
