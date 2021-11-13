@@ -267,7 +267,7 @@ function! WIN_coce()
   endif
 
   " Set clipboard for Windows 
-  set clipboard=unnamed
+  " set clipboard=unnamed
   map <leader>c "+y
   map <leader>v "+gP
   map <leader>x "+x
