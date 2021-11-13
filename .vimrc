@@ -81,6 +81,7 @@ function! LOAD_plugins()
   call minpac#add('tpope/vim-unimpaired')
   call minpac#add('tpope/vim-speeddating')
   call minpac#add('tpope/vim-sleuth')
+  call minpac#add('tpope/vim-markdown')
   if has("linux")
     call minpac#add('tpope/vim-fugitive')
     map <leader>g :Git 
@@ -176,6 +177,7 @@ function! LOAD_plugins()
   nnoremap <leader>us :UnicodeSearch 
   nnoremap <leader>ud :Digraphs
   nnoremap <leader>un :UnicodeName<CR>
+  call minpac#add('preservim/vim-pencil') " Unicode
 
   " Plugin commands
   map <leader>pu :call minpac#update()<CR>
@@ -512,6 +514,20 @@ else
 endif
 nnoremap \\ :NERDTreeToggle<CR>
 nnoremap \f :NERDTreeFind<CR>
+
+" Pencil:
+" Manual Formatting
+" gqap - format current paragraph (see :help gq for details)
+" vapJgqap - merge two paragraphs (current and next) and format
+" ggVGgq or :g/^/norm gqq - format all paragraphs in buffer)
+if exists('g:loaded_pencil')
+  augroup pencil
+    autocmd!
+    autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft', 'autoformat': 1})
+    autocmd FileType text         call pencil#init({'wrap': 'hard', 'autoformat': 0})
+  augroup END
+  let g:airline_section_x = '%{PencilMode()}'
+endif
 
 " FILE BROWSING: with netrw
 " Tweaks for browsing
