@@ -166,6 +166,7 @@ function! LOAD_plugins()
   map <leader>ns :SearchNotes /TODO
   map <leader>nr :RelatedNotes<CR>
   map <leader>nt :RecentNotes<CR>
+  autocmd BufNewFile,BufRead */.git/COMMIT_EDITMSG setlocal filetype=notes
   let g:notes_suffix = '.txt'
   if !empty(glob("$HOME/Dropbox/Notes/README.md"))
     let g:notes_directories = ['$HOME/Dropbox/Notes']
