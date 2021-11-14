@@ -8,3 +8,4 @@
 *.swp
 .vim/pack/
 tags
+.vim/thesaurus/mthesaur.txt
