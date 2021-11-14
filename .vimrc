@@ -596,4 +596,5 @@ nmap ga <Plug>(EasyAlign)
 
 " AirLine: Status bar look
 let g:airline_theme='apprentice'
+" let g:airline_powerline_fonts = 1
 " }}} Plugin Related Settings "
