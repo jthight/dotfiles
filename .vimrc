@@ -1,8 +1,8 @@
 " File: $MYVIMRC
 " Editor: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 13, 2021
-let editver = "20211113"
+" Last Modified: November 14, 2021
+let editver = "20211114"
 
 " Search For MAIN_GENERAL_CODE: To go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
@@ -318,8 +318,8 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 " Visual Move
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+vnoremap <Down> :m '>+1<CR>gv=gv
+vnoremap <Up> :m '<-2<CR>gv=gv
 " Insert an empty new line in normal mode
 nnoremap [oo o<Esc>0D
 nnoremap ]oo O<Esc>0D
@@ -520,14 +520,28 @@ nnoremap \f :NERDTreeFind<CR>
 " gqap - format current paragraph (see :help gq for details)
 " vapJgqap - merge two paragraphs (current and next) and format
 " ggVGgq or :g/^/norm gqq - format all paragraphs in buffer)
-if exists('g:loaded_pencil')
-  augroup pencil
-    autocmd!
-    autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft', 'autoformat': 1})
-    autocmd FileType text         call pencil#init({'wrap': 'hard', 'autoformat': 0})
-  augroup END
+function! Prose()
+  autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft', 'autoformat': 1})
+  autocmd FileType text         call pencil#init({'wrap': 'hard', 'autoformat': 0})
+  " Set Spellcheck On
+  setlocal spell spelllang=en_us
+  " Set wrap on
+  set wrap
+  " force top correction on most recent misspelling
+  nnoremap <buffer> <c-s> [s1z=<c-o>
+  inoremap <buffer> <c-s> <c-g>u<Esc>[s1z=`]A<c-g>u
+  " replace common punctuation
+  iabbrev <buffer> -- –
+  iabbrev <buffer> << «
+  iabbrev <buffer> >> »
+  " open most folds
+  setlocal foldlevel=6
   let g:airline_section_x = '%{PencilMode()}'
-endif
+endfunction
+" automatically initialize buffer by file type
+autocmd FileType markdown,mkd,text call Prose()
+" invoke manually by command for other file types
+command! -nargs=0 Prose call Prose()
 
 " FILE BROWSING: with netrw
 " Tweaks for browsing
