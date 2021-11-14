@@ -177,7 +177,8 @@ function! LOAD_plugins()
   nnoremap <leader>us :UnicodeSearch 
   nnoremap <leader>ud :Digraphs
   nnoremap <leader>un :UnicodeName<CR>
-  call minpac#add('preservim/vim-pencil') " Unicode
+  call minpac#add('preservim/vim-pencil') " Working with text
+  call minpac#add('preservim/vim-lexical') " Word Check
 
   " Plugin commands
   map <leader>pu :call minpac#update()<CR>
@@ -523,8 +524,9 @@ nnoremap \f :NERDTreeFind<CR>
 function! Prose()
   autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft', 'autoformat': 1})
   autocmd FileType text         call pencil#init({'wrap': 'hard', 'autoformat': 0})
+  call lexical#init()
   " Set Spellcheck On
-  setlocal spell spelllang=en_us
+  " setlocal spell spelllang=en_us
   " Set wrap on
   set wrap
   " force top correction on most recent misspelling

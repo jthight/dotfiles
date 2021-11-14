@@ -54,6 +54,7 @@ up.
 - [prabirshrestha/async.vim](https://github.com/prabirshrestha/async.vim)
 - [prabirshrestha/vim-lsp](https://github.com/prabirshrestha/vim-lsp)
 - [preservim/nerdtree](https://github.com/preservim/nerdtree)
+- [preservim/vim-lexical](https://github.com/preservim/vim-lexical)
 - [preservim/vim-pencil](https://github.com/preservim/vim-pencil)
 - [raimondi/delimitmate](https://github.com/raimondi/delimitmate)
 - [scrooloose/syntastic](https://github.com/scrooloose/syntastic)
