@@ -98,7 +98,7 @@ alias ports='netstat -tulanp'
 # ping - set ping to 5 times then stop
 # alias ping='ping -c 5'
 if [ "$_disto" = "ID=kali" ]; then
-  if [ $_uid != "0" ]; then
+  if [ "$_uid" != "0" ]; then
     alias ping='sudo ping -c 5'
   else
     alias ping='ping -c 5'
