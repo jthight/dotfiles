@@ -363,15 +363,8 @@ endif
 map <leader>8 :UltiSnipsEdit!<CR> "Edit snippets
 
 " ESC:
-" map jk or jj as <esc> key when in insert mode
+" map jk <esc> key when in insert mode
 inoremap jk <esc>
-inoremap jj <esc>
-"So I can move around in insert
-" inoremap <C-k> <C-o>gk
-" inoremap <C-h> <Left>
-" inoremap <C-l> <Right>
-" inoremap <C-j> <C-o>gj
-inoremap <C-s> <ESC>A
 
 " WINDOWS:
 " Make working with multiple buffers less of a pain
