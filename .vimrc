@@ -1,8 +1,8 @@
 " File: $MYVIMRC
 " Editor: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 14, 2021
-let editver = "20211114"
+" Last Modified: November 15, 2021
+let editver = "20211115"
 
 " Search For MAIN_GENERAL_CODE: To go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
@@ -217,7 +217,8 @@ function! LINUX_code()
     let g:solarized_visibility="high"
     colorscheme solarized
   endif
-
+  " set location of dictionary
+  let g:lexical#dictionary = ['/usr/share/dict/words',]
   " Run Python3 with <F9>
   autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
   " load .vimrc.local if present
@@ -279,6 +280,8 @@ function! WIN_coce()
     set pythonthreedll=C:\bin\python3\python39.dll
   endif
 
+  " set location of dictionary
+  let g:lexical#dictionary = ['C:\Users\jthig\Dropbox\dict\american-english',]
   " Check to avoid UltiSnips Deprecation Warning imp module is deprecated
   if has('python3')
     silent! python3 1
@@ -522,6 +525,7 @@ nnoremap \f :NERDTreeFind<CR>
 " vapJgqap - merge two paragraphs (current and next) and format
 " ggVGgq or :g/^/norm gqq - format all paragraphs in buffer)
 function! Prose()
+  call pencil#init()
   autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft', 'autoformat': 1})
   autocmd FileType text         call pencil#init({'wrap': 'hard', 'autoformat': 0})
   call lexical#init()
@@ -539,6 +543,10 @@ function! Prose()
   " open most folds
   setlocal foldlevel=6
   let g:airline_section_x = '%{PencilMode()}'
+  let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt','~/.vim/thesaurus/english.txt',]
+  let g:lexical#spell_key = '<leader>sp'
+  let g:lexical#thesaurus_key = '<leader>t'
+  let g:lexical#dictionary_key = '<leader>k'
 endfunction
 " automatically initialize buffer by file type
 autocmd FileType markdown,mkd,text call Prose()
