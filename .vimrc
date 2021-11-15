@@ -447,6 +447,7 @@ set formatoptions=tcqrn1
 set tabstop=2
 autocmd FileType python setlocal tabstop=2
 autocmd FileType yaml setlocal tabstop=2
+autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 set shiftwidth=2
 set softtabstop=2
 set expandtab
