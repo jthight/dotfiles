@@ -124,18 +124,6 @@ function! LOAD_plugins()
   let g:syntastic_check_on_open = 1
   let g:syntastic_check_on_wq = 0
   let g:syntastic_python_checkers = ['pylint']
-  call minpac#add('haya14busa/incsearch.vim')
-  map /  <plug>(incsearch-forward)
-  map ?  <plug>(incsearch-backward)
-  map g/ <plug>(incsearch-stay)
-  " set hlsearch
-  let g:incsearch#auto_nohlsearch = 1
-  map n  <plug>(incsearch-nohl-n)
-  map n  <plug>(incsearch-nohl-n)
-  map *  <plug>(incsearch-nohl-*)
-  map #  <plug>(incsearch-nohl-#)
-  map g* <plug>(incsearch-nohl-g*)
-  map g# <plug>(incsearch-nohl-g#)
   call minpac#add('kien/ctrlp.vim')
   let g:ctrlp_map = '<c-q>'
   let g:ctrlp_cmd = 'CtrlP'
