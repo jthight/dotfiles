@@ -304,8 +304,8 @@ if &compatible
 endif
 " Turn on syntax highlighting
 syntax enable
-filetype plugin on
 filetype plugin indent on
+set hidden
 set foldmethod=marker   " fold based on indent"
 " }}} Initial Settings "
 
@@ -457,9 +457,6 @@ set noshiftround
 set scrolloff=8
 set backspace=indent,eol,start
 set matchpairs+=<:> " use % to jump between pairs
-
-" Allow hidden buffers
-set hidden
 
 " RENDERING:
 set ttyfast
