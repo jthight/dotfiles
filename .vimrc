@@ -1,8 +1,8 @@
 " File: $MYVIMRC
 " Editor: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 15, 2021
-let editver = "20211115"
+" Last Modified: November 17, 2021
+let editver = "20211117"
 
 " Search For MAIN_GENERAL_CODE: To go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
@@ -282,6 +282,26 @@ function! WIN_coce()
 endfunction
 " }}} Load Windows code function "
 
+" FUNCTIONS:
+" General functions {{{ "
+" TabMessage function to execute a cmd and redirect output to a buffers
+" use: :TabMessage cmd
+function! TabMessage(cmd)
+  redir => message
+  silent execute a:cmd
+  redir END
+  if empty(message)
+    echoerr "no output"
+  else
+    " use "new" instead of "tabnew" below if you prefer split windows instead of tabs
+    tabnew
+    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
+    silent put=message
+  endif
+endfunction
+command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
+" }}} General functions "
+
 " MAIN_GENERAL_CODE:
 " Initial Settings {{{ "
 " code that applies to all 
@@ -318,6 +338,10 @@ nnoremap ]oo O<Esc>0D
 " Move up/down editor lines
 nnoremap j gj
 nnoremap k gk
+" Time Stamp:
+" Inser time with <F5> in normal and insert mode
+nnoremap <F5> "=strftime("%c")<CR>P
+inoremap <F5> <C-R>=strftime("%c")<CR>
 " LEADER KEY Mapping:
 "
 " Pick a leader key
