@@ -332,9 +332,6 @@ noremap <Right> <Nop>
 " Visual Move
 vnoremap <Down> :m '>+1<CR>gv=gv
 vnoremap <Up> :m '<-2<CR>gv=gv
-" Insert an empty new line in normal mode
-nnoremap [oo o<Esc>0D
-nnoremap ]oo O<Esc>0D
 " Move up/down editor lines
 nnoremap j gj
 nnoremap k gk
