@@ -168,6 +168,7 @@ function! LOAD_plugins()
   call minpac#add('preservim/vim-pencil') " Working with text
   call minpac#add('preservim/vim-lexical') " Word Check
   call minpac#add('nelstrom/vim-visual-star-search') " Search Visual * & #
+  call minpac#add('tpope/vim-abolish') " Abstract Search
 
   " Plugin commands
   map <leader>pu :call minpac#update()<CR>
