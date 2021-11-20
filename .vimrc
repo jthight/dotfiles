@@ -84,7 +84,7 @@ function! LOAD_plugins()
   call minpac#add('tpope/vim-markdown')
   if has("linux")
     call minpac#add('tpope/vim-fugitive')
-    map <leader>g :Git 
+    nnoremap <leader>g :Git 
   endif
   call minpac#add('vim-scripts/ReplaceWithRegister')
   call minpac#add('christoomey/vim-titlecase')
@@ -148,19 +148,19 @@ function! LOAD_plugins()
   call minpac#add('vim-scripts/ZoomWin') " use <c-w>o to Zoom In or Zoom Out
   call minpac#add('xolox/vim-misc') " required for xolox/vim-notes
   call minpac#add('xolox/vim-notes') " Note taking in vim :Note
-  vmap <leader>nv :SplitNoteFromSelectedText<CR>
-  map <leader>nn :Note 
-  map <leader>nd :DeleteNote
-  map <leader>ns :SearchNotes /TODO
-  map <leader>nr :RelatedNotes<CR>
-  map <leader>nt :RecentNotes<CR>
+  vmap <leader>nn :SplitNoteFromSelectedText<CR>
+  nnoremap <leader>nn :Note 
+  nnoremap <leader>nd :DeleteNote
+  nnoremap <leader>ns :SearchNotes /TODO
+  nnoremap <leader>nr :RelatedNotes<CR>
+  nnoremap <leader>nt :RecentNotes<CR>
   autocmd BufNewFile,BufRead */.git/COMMIT_EDITMSG setlocal filetype=notes
   let g:notes_suffix = '.txt'
   if !empty(glob("$HOME/Dropbox/Notes/README.md"))
     let g:notes_directories = ['$HOME/Dropbox/Notes']
   endif
   call minpac#add('chrisbra/unicode.vim') " Unicode
-  nmap gz <Plug>(UnicodeGA)
+  nnoremap gz <Plug>(UnicodeGA)
   nnoremap <leader>ut :UnicodeTable<CR>
   nnoremap <leader>us :UnicodeSearch 
   nnoremap <leader>ud :Digraphs
@@ -171,9 +171,9 @@ function! LOAD_plugins()
   call minpac#add('tpope/vim-abolish') " Abstract Search
 
   " Plugin commands
-  map <leader>pu :call minpac#update()<CR>
-  map <leader>pc :call minpac#clean()<CR>
-  map <leader>ps :call minpac#status()<CR>
+  nnoremap <leader>pu :call minpac#update()<CR>
+  nnoremap <leader>pc :call minpac#clean()<CR>
+  nnoremap <leader>ps :call minpac#status()<CR>
 endfunction  
 " }}} Load common PlugIns function "
 
