@@ -322,8 +322,6 @@ set foldmethod=marker   " fold based on indent"
 " KEYS:
 " Key Mapping {{{ "
 " COMAND MODE:
-" another way to command mode
-nnoremap <silent> [[ :
 " will recall path in command mode eg: :e %%
 cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " Stop using the arrow Keys
