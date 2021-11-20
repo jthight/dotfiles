@@ -94,11 +94,11 @@ function! LOAD_plugins()
     call minpac#add('christoomey/vim-tmux-runner')
     let g:tmux_navigator_no_mappings = 1
     let g:VtrUseVtrMaps = 1
-    nnoremap <silent> <C-H> :TmuxNavigateLeft<cr>
-    nnoremap <silent> <C-J> :TmuxNavigateDown<cr>
-    nnoremap <silent> <C-K> :TmuxNavigateUp<cr>
-    nnoremap <silent> <C-L> :TmuxNavigateRight<cr>
-    nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+    map <silent> <C-H> :TmuxNavigateLeft<cr>
+    map <silent> <C-J> :TmuxNavigateDown<cr>
+    map <silent> <C-K> :TmuxNavigateUp<cr>
+    map <silent> <C-L> :TmuxNavigateRight<cr>
+    map <silent> <C-\> :TmuxNavigatePrevious<cr>
   endif
   call minpac#add('christoomey/vim-quicklink')
   call minpac#add('mattn/webapi-vim')
