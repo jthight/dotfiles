@@ -1,8 +1,8 @@
 " File: $MYVIMRC
 " Editor: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 21, 2021
-let editver = "20211121"
+" Last Modified: November 22, 2021
+let editver = "20211122"
 
 " Search For MAIN_GENERAL_CODE: To go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
@@ -148,6 +148,7 @@ function! LOAD_plugins()
   call minpac#add('vim-scripts/ZoomWin') " use <c-w>o to Zoom In or Zoom Out
   call minpac#add('xolox/vim-misc') " required for xolox/vim-notes
   call minpac#add('xolox/vim-notes') " Note taking in vim :Note
+  let g:notes_tab_indents = 0
   vmap <leader>nn :SplitNoteFromSelectedText<CR>
   nnoremap <leader>nn :Note 
   nnoremap <leader>nd :DeleteNote
@@ -528,7 +529,7 @@ nnoremap \f :NERDTreeFind<CR>
 function! Prose()
   call pencil#init()
   autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft', 'autoformat': 1})
-  autocmd FileType text         call pencil#init({'wrap': 'hard', 'autoformat': 0})
+  autocmd FileType text,notes   call pencil#init({'wrap': 'hard', 'autoformat': 0})
   call lexical#init()
   " Set Spellcheck On
   " setlocal spell spelllang=en_us
