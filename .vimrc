@@ -1,8 +1,8 @@
 " File: $MYVIMRC
 " Editor: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 20, 2021
-let editver = "20211120"
+" Last Modified: November 21, 2021
+let editver = "20211121"
 
 " Search For MAIN_GENERAL_CODE: To go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
@@ -169,6 +169,7 @@ function! LOAD_plugins()
   call minpac#add('preservim/vim-lexical') " Word Check
   call minpac#add('nelstrom/vim-visual-star-search') " Search Visual * & #
   call minpac#add('tpope/vim-abolish') " Abstract Search
+  call minpac#add('frioux/vim-regedit') " edit a register
 
   " Plugin commands
   nnoremap <leader>pu :call minpac#update()<CR>
