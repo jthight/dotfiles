@@ -532,6 +532,8 @@ autocmd BufNewFile,BufRead */.git/COMMIT_EDITMSG setlocal filetype=notes
 let g:notes_suffix = '.txt'
 if !empty(glob("$HOME/Dropbox/Notes/README.md"))
   let g:notes_directories = ['$HOME/Dropbox/Notes']
+else
+  let g:notes_directories = ['$HOME/Notes']
 endif
 
 " unicode.vim code
