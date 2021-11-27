@@ -22,42 +22,42 @@ function! IOS_code()
   map <leader>ps :iplug update<cr>
   map <leader>pu :iplug upgrade<cr>
   " add plugin at cursor
-  autocmd FileType vim nnoremap <buffer> <leader>pa fiyg_:<c-r>0<cr>j
+  autocmd FileType vim nnoremap <buffer> <leader>pa fiyg_:<c-r>0<cr>j0
   " iplug add commands; Installed PlugIns
+  " iplug add 
+  " iplug add https://github.com/Raimondi/delimitMate.git
+  " iplug add https://github.com/SirVer/ultisnips.git
   " iplug add https://github.com/adelarsq/vim-matchit.git
+  " iplug add https://github.com/chrisbra/unicode.vim.git
   " iplug add https://github.com/christoomey/vim-sort-motion.git
   " iplug add https://github.com/christoomey/vim-titlecase.git
+  " iplug add https://github.com/frioux/vim-regedit.git
+  " iplug add https://github.com/haya14busa/incsearch.vim.git
   " iplug add https://github.com/honza/vim-snippets.git
   " iplug add https://github.com/jeffkreeftmeijer/vim-numbertoggle.git
   " iplug add https://github.com/junegunn/vim-easy-align.git
-  " iplug add https://github.com/kana/vim-textobj-user.git
   " iplug add https://github.com/kana/vim-textobj-entire.git
-  " iplug add https://github.com/kana/vim-textobj-line.git
   " iplug add https://github.com/kana/vim-textobj-indent.git
+  " iplug add https://github.com/kana/vim-textobj-line.git
+  " iplug add https://github.com/kana/vim-textobj-user.git
+  " iplug add https://github.com/nelstrom/vim-visual-star-search.git
   " iplug add https://github.com/preservim/nerdcommenter.git
   " iplug add https://github.com/preservim/nerdtree.git
-  " iplug add https://github.com/SirVer/ultisnips.git
+  " iplug add https://github.com/preservim/vim-lexical.git
+  " iplug add https://github.com/preservim/vim-pencil.git
+  " iplug add https://github.com/tpope/vim-abolish.git
   " iplug add https://github.com/tpope/vim-commentary.git
+  " iplug add https://github.com/tpope/vim-markdown.git
   " iplug add https://github.com/tpope/vim-repeat.git
+  " iplug add https://github.com/tpope/vim-sleuth.git
+  " iplug add https://github.com/tpope/vim-speeddating.git
   " iplug add https://github.com/tpope/vim-surround.git
   " iplug add https://github.com/tpope/vim-unimpaired.git
+  " iplug add https://github.com/tyru/open-browser.vim.git
   " iplug add https://github.com/vim-airline/vim-airline-themes.git
   " iplug add https://github.com/vim-airline/vim-airline.git
   " iplug add https://github.com/vim-scripts/AutoComplPop.git
   " iplug add https://github.com/vim-scripts/ReplaceWithRegister.git
-  " iplug add https://github.com/tyru/open-browser.vim.git
-  " iplug add https://github.com/Raimondi/delimitMate.git
-  " iplug add 
-  " iplug add https://github.com/chrisbra/unicode.vim.git
-  " iplug add https://github.com/frioux/vim.regedit.git
-  " iplug add https://github.com/haya14busa/incsearch.vim.git
-  " iplug add https://github.com/nelstrom/vim-visual-star-search.git
-  " iplug add https://github.com/preservim/vim-lexical.git
-  " iplug add https://github.com/preservim/vim-pencil.git
-  " iplug add https://github.com/tpope/vim-abolish.git
-  " iplug add https://github.com/tpope/vim-markdown.git
-  " iplug add https://github.com/tpope/vim-sleuth.git
-  " iplug add https://github.com/tpope/vim-speeddating.git
   " iplug add https://github.com/vim-scripts/ZoomWin.git
   " iplug add https://github.com/xolox/vim-misc.git
   " iplug add https://github.com/xolox/vim-notes.git
