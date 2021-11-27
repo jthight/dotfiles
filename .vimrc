@@ -19,8 +19,10 @@ function! IOS_code()
   map <leader>h :echo "Hello IOS World, vimrc Version =" editver<CR>
   "____________________________________________________________________________
   " IOS spacific commands
-  map <leader>p :iplug update<cr>
-  map <leader>P :iplug upgrade<cr>
+  map <leader>ps :iplug update<cr>
+  map <leader>pu :iplug upgrade<cr>
+  " add plugin at cursor
+  autocmd FileType vim nnoremap <buffer> <leader>pa fiyg_:<c-r>0<cr>j
   " iplug add commands; Installed PlugIns
   " iplug add https://github.com/adelarsq/vim-matchit.git
   " iplug add https://github.com/christoomey/vim-sort-motion.git
@@ -45,6 +47,20 @@ function! IOS_code()
   " iplug add https://github.com/vim-scripts/ReplaceWithRegister.git
   " iplug add https://github.com/tyru/open-browser.vim.git
   " iplug add https://github.com/Raimondi/delimitMate.git
+  " iplug add 
+  " iplug add https://github.com/chrisbra/unicode.vim.git
+  " iplug add https://github.com/frioux/vim.regedit.git
+  " iplug add https://github.com/haya14busa/incsearch.vim.git
+  " iplug add https://github.com/nelstrom/vim-visual-star-search.git
+  " iplug add https://github.com/preservim/vim-lexical.git
+  " iplug add https://github.com/preservim/vim-pencil.git
+  " iplug add https://github.com/tpope/vim-abolish.git
+  " iplug add https://github.com/tpope/vim-markdown.git
+  " iplug add https://github.com/tpope/vim-sleuth.git
+  " iplug add https://github.com/tpope/vim-speeddating.git
+  " iplug add https://github.com/vim-scripts/ZoomWin.git
+  " iplug add https://github.com/xolox/vim-misc.git
+  " iplug add https://github.com/xolox/vim-notes.git
   " Colorscheme
   set t_Co=256
   set background=dark
@@ -148,24 +164,7 @@ function! LOAD_plugins()
   call minpac#add('vim-scripts/ZoomWin') " use <c-w>o to Zoom In or Zoom Out
   call minpac#add('xolox/vim-misc') " required for xolox/vim-notes
   call minpac#add('xolox/vim-notes') " Note taking in vim :Note
-  let g:notes_tab_indents = 0
-  vmap <leader>nn :SplitNoteFromSelectedText<CR>
-  nnoremap <leader>nn :Note 
-  nnoremap <leader>nd :DeleteNote
-  nnoremap <leader>ns :SearchNotes /TODO
-  nnoremap <leader>nr :RelatedNotes<CR>
-  nnoremap <leader>nt :RecentNotes<CR>
-  autocmd BufNewFile,BufRead */.git/COMMIT_EDITMSG setlocal filetype=notes
-  let g:notes_suffix = '.txt'
-  if !empty(glob("$HOME/Dropbox/Notes/README.md"))
-    let g:notes_directories = ['$HOME/Dropbox/Notes']
-  endif
   call minpac#add('chrisbra/unicode.vim') " Unicode
-  nnoremap gz <Plug>(UnicodeGA)
-  nnoremap <leader>ut :UnicodeTable<CR>
-  nnoremap <leader>us :UnicodeSearch 
-  nnoremap <leader>ud :Digraphs
-  nnoremap <leader>un :UnicodeName<CR>
   call minpac#add('preservim/vim-pencil') " Working with text
   call minpac#add('preservim/vim-lexical') " Word Check
   call minpac#add('nelstrom/vim-visual-star-search') " Search Visual * & #
@@ -520,6 +519,27 @@ else
 endif
 nnoremap \\ :NERDTreeToggle<CR>
 nnoremap \f :NERDTreeFind<CR>
+
+" vim-notes code
+let g:notes_tab_indents = 0
+vmap <leader>nn :SplitNoteFromSelectedText<CR>
+nnoremap <leader>nn :Note 
+nnoremap <leader>nd :DeleteNote
+nnoremap <leader>ns :SearchNotes /TODO
+nnoremap <leader>nr :RelatedNotes<CR>
+nnoremap <leader>nt :RecentNotes<CR>
+autocmd BufNewFile,BufRead */.git/COMMIT_EDITMSG setlocal filetype=notes
+let g:notes_suffix = '.txt'
+if !empty(glob("$HOME/Dropbox/Notes/README.md"))
+  let g:notes_directories = ['$HOME/Dropbox/Notes']
+endif
+
+" unicode.vim code
+nnoremap gz <Plug>(UnicodeGA)
+nnoremap <leader>ut :UnicodeTable<CR>
+nnoremap <leader>us :UnicodeSearch 
+nnoremap <leader>ud :Digraphs
+nnoremap <leader>un :UnicodeName<CR>
 
 " Pencil:
 " Manual Formatting
