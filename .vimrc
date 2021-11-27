@@ -1,8 +1,8 @@
 " File: $MYVIMRC
 " Editor: John Hight
 " Description: vimrc for All systems
-" Last Modified: November 22, 2021
-let editver = "20211122"
+" Last Modified: November 27, 2021
+let editver = "20211127"
 
 " Search For MAIN_GENERAL_CODE: To go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
