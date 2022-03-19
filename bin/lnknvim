@@ -1,0 +1,13 @@
+FILE=$HOME/.vim/init.vim
+if [ -f "$FILE" ]; then
+  exit
+else 
+  scp -r john@192.168.1.15:~/src/memories-for-tomorrow/files/.vim/init.vim ~/.vim/
+fi 
+if [ -d "$HOME/.config/nvim" ]; then
+  sudo rm -r $HOME/.config/nvim/
+  ln -s $HOME/.vim/ $HOME/.config/nvim
+else
+  ln -s $HOME/.vim/ $HOME/.config/nvim
+fi
+
