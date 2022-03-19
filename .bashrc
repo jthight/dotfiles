@@ -83,7 +83,7 @@ if [ "$color_prompt" = yes ]; then
     else
         prompt_symbol=@
     fi
-    if [ "$EUID" -eq 0 ]; then # Change prompt colors for root user
+    if [ "$EUID" = 0 ]; then # Change prompt colors for root user
         prompt_color='\[\033[;94m\]'
         info_color='\[\033[1;31m\]'
         if [ "$_disto" = "ID=kali" ]; then
