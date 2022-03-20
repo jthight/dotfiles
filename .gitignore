@@ -9,3 +9,7 @@
 .vim/pack/
 tags
 .vim/thesaurus/mthesaur.txt
+bin/passwd_gen
+bin/pg
+bin/pipeviewer
+bin/pv
