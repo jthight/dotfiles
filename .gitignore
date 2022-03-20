@@ -13,3 +13,4 @@ bin/passwd_gen
 bin/pg
 bin/pipeviewer
 bin/pv
+bin/pullwin
