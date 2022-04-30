@@ -6,18 +6,6 @@
 # Inserts a blank line between shell prompts
 add_newline = false
 
-[battery]
-full_symbol = "🔋"
-charging_symbol = "🔌"
-discharging_symbol = "⚡"
-
-[[battery.display]]
-threshold = 30
-style = "bold red"
-
-[character]
-error_symbol = "[❌](bold red) "
-
 [cmd_duration]
 min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
 format = " took [$duration]($style)"
@@ -31,7 +19,7 @@ format = "[$read_only]($read_only_style)[$path]($style) "
 
 [git_branch]
 format = " [$symbol](bold purple)[$branch]($style) "
-symbol = " "
+symbol = " "
 style = "bold yellow"
 
 [git_commit]
@@ -64,7 +52,7 @@ disabled = false
 
 [julia]
 format = "[$symbol$version]($style) "
-symbol = "ஃ "
+symbol = " "
 style = "bold green"
 
 [memory_usage]
@@ -75,13 +63,16 @@ disabled = false
 
 [package]
 disabled = true
+symbol = " "
 
 [python]
 format = "[$symbol$version]($style) "
+symbol = " "
 style = "bold green"
 
 [rust]
 format = "[$symbol$version]($style) "
+symbol = " "
 style = "bold green"
 
 [time]
