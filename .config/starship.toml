@@ -82,7 +82,7 @@ style = "bold green"
 
 [time]
 time_format = "%T"
-format = "⌚ [$time]($style) "
+format = "[](bright-yellow) [$time]($style) "
 style = "bright-blue"
 disabled = false
 
