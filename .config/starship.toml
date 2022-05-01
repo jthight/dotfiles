@@ -36,9 +36,9 @@ format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
 [git_status]
 conflicted = "[](bold red) "
-ahead = "[](bold green)×${count} "
+ahead = "[](bright-blue)×${count} "
 behind = "[](bold red) ×${count} "
-diverged = "[](bold red) [](bold green) ×${ahead_count} [](bold red) ×${behind_count} "
+diverged = "[](bold red) [](bright-blue)×${ahead_count} [](bold red)×${behind_count} "
 untracked = "[](bold blue)×${count} "
 stashed = "[](bold purple) "
 modified = "[](bold yellow)×${count}"
