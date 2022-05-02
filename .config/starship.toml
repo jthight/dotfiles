@@ -76,7 +76,7 @@ symbol = " "
 style = "bold green"
 
 [rust]
-format = "[$symbol](bright-red)[$version]($style) "
+format = "[$symbol](#f67926)[$version]($style) "
 symbol = " "
 style = "bold green"
 
