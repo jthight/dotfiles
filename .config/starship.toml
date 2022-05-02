@@ -71,12 +71,12 @@ disabled = true
 symbol = " "
 
 [python]
-format = "[$symbol](bold yellow)[$version]($style) "
+format = "[$symbol](bright-yellow)[$version]($style) "
 symbol = " "
 style = "bold green"
 
 [rust]
-format = "[$symbol](bold orange)[$version]($style) "
+format = "[$symbol](bright-orange)[$version]($style) "
 symbol = " "
 style = "bold green"
 
@@ -87,5 +87,5 @@ style = "bright-blue"
 disabled = false
 
 [username]
-style_user = "bold dimmed yellow"
+style_user = "dimmed yellow"
 show_always = false
