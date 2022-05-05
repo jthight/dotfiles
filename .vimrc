@@ -232,6 +232,22 @@ function! WIN_coce()
   let base16colorspace=256  " Access colors present in 256 colorspace
   set termguicolors
 
+  if has("gui_win32")
+    set gfn=SauceCodePro_NF:h12:cANSI:qDRAFT
+    set lines=50 columns=150
+    set linespace=4
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
+    highlight Cursor guifg=red guibg=gray
+    highlight iCursor guifg=white guibg=steelblue
+    set guicursor=n-v-c:block-Cursor
+    set guicursor+=i:ver100-iCursor
+    set guicursor+=n-v-c:blinkon0
+    set guicursor+=i:blinkwait10
+  endif
+
   " Set clipboard for Windows 
   " set clipboard=unnamed
   map <leader>c "+y
