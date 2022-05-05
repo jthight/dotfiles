@@ -244,29 +244,29 @@ function! WIN_coce()
   " Open the current file in the default browser`
   command! OpenBrowserCurrent execute "OpenBrowser" "file:///" . expand('%:p:gs?\\?/?')
   " Color scheme (terminal)
-  packadd! dracula
-  syntax enable
+  " packadd! dracula
+  " syntax enable
+  highlight Normal guifg=white guibg=black
   colorscheme dracula
-  " highlight Normal guifg=white guibg=black
   " colorscheme base16-gruvbox-dark-medium
-  " let base16colorspace=256  " Access colors present in 256 colorspace
-  " set termguicolors
-  if has("gui_win32")
-    set guifont=lucida_console:h12:cANSI
-    set lines=50 columns=150
-    set linespace=4
-    map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
-    set guioptions-=m  "remove menu bar
-    set guioptions-=T  "remove toolbar
-    set guioptions-=r  "remove right-hand scroll bar
-    set guioptions-=L  "remove left-hand scroll bar
-    highlight Cursor guifg=red guibg=gray
-    highlight iCursor guifg=white guibg=steelblue
-    set guicursor=n-v-c:block-Cursor
-    set guicursor+=i:ver100-iCursor
-    set guicursor+=n-v-c:blinkon0
-    set guicursor+=i:blinkwait10
-  endif
+  let base16colorspace=256  " Access colors present in 256 colorspace
+  set termguicolors
+  " if has("gui_win32")
+  "   set guifont=lucida_console:h12:cANSI
+  "   set lines=50 columns=150
+  "   set linespace=4
+  "   map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+  "   set guioptions-=m  "remove menu bar
+  "   set guioptions-=T  "remove toolbar
+  "   set guioptions-=r  "remove right-hand scroll bar
+  "   set guioptions-=L  "remove left-hand scroll bar
+  "   highlight Cursor guifg=red guibg=gray
+  "   highlight iCursor guifg=white guibg=steelblue
+  "   set guicursor=n-v-c:block-Cursor
+  "   set guicursor+=i:ver100-iCursor
+  "   set guicursor+=n-v-c:blinkon0
+  "   set guicursor+=i:blinkwait10
+  " endif
 
   " Set clipboard for Windows 
   " set clipboard=unnamed
