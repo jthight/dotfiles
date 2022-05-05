@@ -81,6 +81,7 @@ function! LOAD_plugins()
   " minpac is available.
   call minpac#init()
   call minpac#add('k-takata/minpac', {'type': 'opt'})
+  call minpac#add('dracula/vim', {'name': 'dracula'})
   call minpac#add('kana/vim-textobj-user') " Create your own text objects
   call minpac#add('kana/vim-textobj-indent') " Create your own text objects
   call minpac#add('kana/vim-textobj-entire') " Create your own text objects
@@ -133,7 +134,7 @@ function! LOAD_plugins()
   " additional plugins here.
   call minpac#add('scrooloose/syntastic')
   set statusline+=%#warningmsg#
-  set statusline+=%{syntasticstatuslineflag()}
+  " set statusline+=%{syntasticstatuslineflag()}
   set statusline+=%*
   let g:syntastic_always_populate_loc_list = 1
   let g:syntastic_auto_loc_list = 1
@@ -192,22 +193,25 @@ function! LINUX_code()
   set thesaurus+=$HOME/.vim/thesaurus/english.txt
   "
   " load PlugIns
+  packadd! dracula
+  syntax enable
+  colorscheme dracula
   call LOAD_plugins() " load plugins
-  if has('nvim')
-    highlight Normal guifg=white guibg=black
-    colorscheme base16-gruvbox-dark-medium
-    let base16colorspace=256  " Access colors present in 256 colorspace
-    set termguicolors
-  else
-    " Color scheme (terminal)
-    set t_Co=256
-    set background=dark
-    let g:solarized_termcolors=256
-    let g:solarized_termtrans=1
-    let g:solarized_contrast="high"
-    let g:solarized_visibility="high"
-    colorscheme solarized
-  endif
+  " if has('nvim')
+  "   highlight Normal guifg=white guibg=black
+  "   colorscheme base16-gruvbox-dark-medium
+  "   let base16colorspace=256  " Access colors present in 256 colorspace
+  "   set termguicolors
+  " else
+  "   " Color scheme (terminal)
+  "   set t_Co=256
+  "   set background=dark
+  "   let g:solarized_termcolors=256
+  "   let g:solarized_termtrans=1
+  "   let g:solarized_contrast="high"
+  "   let g:solarized_visibility="high"
+  "   colorscheme solarized
+  " endif
   " set location of dictionary
   let g:lexical#dictionary = ['/usr/share/dict/words',]
   " Run Python3 with <F9>
@@ -240,10 +244,13 @@ function! WIN_coce()
   " Open the current file in the default browser`
   command! OpenBrowserCurrent execute "OpenBrowser" "file:///" . expand('%:p:gs?\\?/?')
   " Color scheme (terminal)
-  highlight Normal guifg=white guibg=black
-  colorscheme base16-gruvbox-dark-medium
-  let base16colorspace=256  " Access colors present in 256 colorspace
-  set termguicolors
+  packadd! dracula
+  syntax enable
+  colorscheme dracula
+  " highlight Normal guifg=white guibg=black
+  " colorscheme base16-gruvbox-dark-medium
+  " let base16colorspace=256  " Access colors present in 256 colorspace
+  " set termguicolors
   if has("gui_win32")
     set guifont=lucida_console:h12:cANSI
     set lines=50 columns=150
