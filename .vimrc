@@ -88,7 +88,7 @@ function! LOAD_plugins()
   call minpac#add('kana/vim-textobj-line') " Create your own text objects
   call minpac#add('vim-jp/syntax-vim-ex')
   call minpac#add('adelarsq/vim-matchit')
-  call minpac#add('altercation/vim-colors-solarized')
+  " call minpac#add('altercation/vim-colors-solarized')
   call minpac#add('junegunn/vim-easy-align')
   call minpac#add('tyru/open-browser.vim') " opens url in browser
   call minpac#add('jeffkreeftmeijer/vim-numbertoggle')
@@ -127,7 +127,6 @@ function! LOAD_plugins()
   call minpac#add('thomasfaingnaert/vim-lsp-snippets')
   call minpac#add('thomasfaingnaert/vim-lsp-ultisnips')
   call minpac#add('vim-airline/vim-airline')
-  call minpac#add('vim-airline/vim-airline-themes')
   call minpac#add('chriskempson/base16-vim')
   call minpac#add('preservim/nerdtree')
   call minpac#add('raimondi/delimitmate')
@@ -152,6 +151,7 @@ function! LOAD_plugins()
   else
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe         " Windows
     let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+vim-airline-themes
   endif
   let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
   let g:ctrlp_custom_ignore = {
@@ -197,21 +197,6 @@ function! LINUX_code()
   syntax enable
   colorscheme dracula
   call LOAD_plugins() " load plugins
-  " if has('nvim')
-  "   highlight Normal guifg=white guibg=black
-  "   colorscheme base16-gruvbox-dark-medium
-  "   let base16colorspace=256  " Access colors present in 256 colorspace
-  "   set termguicolors
-  " else
-  "   " Color scheme (terminal)
-  "   set t_Co=256
-  "   set background=dark
-  "   let g:solarized_termcolors=256
-  "   let g:solarized_termtrans=1
-  "   let g:solarized_contrast="high"
-  "   let g:solarized_visibility="high"
-  "   colorscheme solarized
-  " endif
   " set location of dictionary
   let g:lexical#dictionary = ['/usr/share/dict/words',]
   " Run Python3 with <F9>
@@ -244,29 +229,10 @@ function! WIN_coce()
   " Open the current file in the default browser`
   command! OpenBrowserCurrent execute "OpenBrowser" "file:///" . expand('%:p:gs?\\?/?')
   " Color scheme (terminal)
-  " packadd! dracula
-  " syntax enable
   highlight Normal guifg=white guibg=black
   colorscheme dracula
-  " colorscheme base16-gruvbox-dark-medium
   let base16colorspace=256  " Access colors present in 256 colorspace
   set termguicolors
-  " if has("gui_win32")
-  "   set guifont=lucida_console:h12:cANSI
-  "   set lines=50 columns=150
-  "   set linespace=4
-  "   map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
-  "   set guioptions-=m  "remove menu bar
-  "   set guioptions-=T  "remove toolbar
-  "   set guioptions-=r  "remove right-hand scroll bar
-  "   set guioptions-=L  "remove left-hand scroll bar
-  "   highlight Cursor guifg=red guibg=gray
-  "   highlight iCursor guifg=white guibg=steelblue
-  "   set guicursor=n-v-c:block-Cursor
-  "   set guicursor+=i:ver100-iCursor
-  "   set guicursor+=n-v-c:blinkon0
-  "   set guicursor+=i:blinkwait10
-  " endif
 
   " Set clipboard for Windows 
   " set clipboard=unnamed
@@ -650,6 +616,6 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " AirLine: Status bar look
-let g:airline_theme='apprentice'
+let g:airline_theme='dracula'
 " let g:airline_powerline_fonts = 1
 " }}} Plugin Related Settings "
