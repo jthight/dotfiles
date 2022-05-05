@@ -88,7 +88,6 @@ function! LOAD_plugins()
   call minpac#add('kana/vim-textobj-line') " Create your own text objects
   call minpac#add('vim-jp/syntax-vim-ex')
   call minpac#add('adelarsq/vim-matchit')
-  " call minpac#add('altercation/vim-colors-solarized')
   call minpac#add('junegunn/vim-easy-align')
   call minpac#add('tyru/open-browser.vim') " opens url in browser
   call minpac#add('jeffkreeftmeijer/vim-numbertoggle')
@@ -151,7 +150,6 @@ function! LOAD_plugins()
   else
     set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe         " Windows
     let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
-vim-airline-themes
   endif
   let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
   let g:ctrlp_custom_ignore = {
@@ -193,10 +191,9 @@ function! LINUX_code()
   set thesaurus+=$HOME/.vim/thesaurus/english.txt
   "
   " load PlugIns
-  packadd! dracula
-  syntax enable
-  colorscheme dracula
   call LOAD_plugins() " load plugins
+  packadd! dracula
+  colorscheme dracula
   " set location of dictionary
   let g:lexical#dictionary = ['/usr/share/dict/words',]
   " Run Python3 with <F9>
@@ -230,6 +227,7 @@ function! WIN_coce()
   command! OpenBrowserCurrent execute "OpenBrowser" "file:///" . expand('%:p:gs?\\?/?')
   " Color scheme (terminal)
   highlight Normal guifg=white guibg=black
+  packadd! dracula
   colorscheme dracula
   let base16colorspace=256  " Access colors present in 256 colorspace
   set termguicolors
