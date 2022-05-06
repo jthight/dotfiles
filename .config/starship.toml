@@ -81,6 +81,11 @@ format = "[$symbol](#f67926)[$version]($style) "
 symbol = " "
 style = "bold green"
 
+[docker_context]
+format = "[$symbol](bright-blue)[$version]($style) "
+symbol = " "
+style = "bold green"
+
 [time]
 time_format = "%T"
 format = "[](bright-yellow) [$time]($style) "
