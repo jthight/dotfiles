@@ -7,9 +7,9 @@
 add_newline = false
 
 [character]
-success_symbol = "[](green)"
-error_symbol = "[](red)"
-vicmd_symbol = "[](green)"
+success_symbol = "[](bold #50fa7b)"
+error_symbol = "[](bold #ff5555)"
+vicmd_symbol = "[](bold #50fa7b)"
 
 [cmd_duration]
 min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
