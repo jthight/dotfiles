@@ -4,7 +4,7 @@
 # Version Date 20220507
 # Ansible copied file .bashrc
 
-alias b-v='echo "Version 20220507"'
+alias s-v='echo ".bashrc Version 20220507"'
 
 # If not running interactively, don't do anything
 case $- in
