@@ -106,7 +106,7 @@ if [ "$OS" != "Windows_NT" ]; then
 else
   printf "   %s\n" "User:          $USERNAME"
 fi
-printf "   %s\n" ".bashrc:       $(b-v)"
+printf "   %s\n" ".bashrc:       $(s-v)"
 printf "   %s\n" ".bash_aliases: $(a-v)"
 printf "\n"
 
