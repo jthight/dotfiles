@@ -1,14 +1,14 @@
 # File: .bash_aliases
 # Author: John Hight
 # Description: .bash_aliases for Linux systems
-# Last Modified: April 26, 2022
+# Last Modified: May 30, 2022
 #
 # Aliases
 # alias alias_name="command_to_run"
 # Version Date .bash_aliases
 # Ansible copied file .bash_aliases
 
-alias a-v='echo "Version 20220426"'
+alias a-v='echo "Version 20220530"'
 # enable color support of ls, less and man, and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -39,15 +39,11 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Long format list
-alias ll="ls -la"
 ## Show hidden files ##
 alias l.='ls -d .* --color=auto'
+alias la.='ls -dl .* --color=auto'
 # Display the directory structure better.
 alias tree='tree --dirsfirst -F'
-
-# update dot files
-alias pulldots='sudo ansible-pull -U https://github.com/jthight/memories-for-tomorrow.git local-dotfiles.yml'
 
 # Print my public IP
 alias myip='curl ipinfo.io/ip'
