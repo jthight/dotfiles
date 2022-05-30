@@ -14,6 +14,8 @@ HISTFILE=~/.zsh_history
 # Use modern completion system
 autoload -Uz compinit
 compinit
+# Plugins
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Starship as prompt https://starship.rs/
 eval "$(starship init zsh)"
