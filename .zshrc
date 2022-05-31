@@ -28,10 +28,15 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use sudo 
-  copyfile web-search copypath copybuffer history you-should-use)
+  copyfile web-search copypath copybuffer history you-should-use 
+  zsh-history-substring-search
+)
 
 source $ZSH/oh-my-zsh.sh
 
+# keys for zsh history
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

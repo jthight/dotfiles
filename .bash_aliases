@@ -52,6 +52,9 @@ alias ipif='curl ipinfo.io/'
 # up - up on level in directory and pwd
 alias up='cd .. && pwd'
 
+# Source .zshrc
+alias src='exec zsh'
+
 # udb - update bashrc after edit
 alias udb='source ~/.bashrc && echo "~/.bashrc -- updated"'
 
