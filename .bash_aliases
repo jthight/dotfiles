@@ -9,6 +9,8 @@
 # Ansible copied file .bash_aliases
 
 alias a-v='echo "Version 20220530"'
+# Which shell is running now
+alias wsh='ps -p $$'
 # enable color support of ls, less and man, and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
