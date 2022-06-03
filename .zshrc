@@ -1,6 +1,6 @@
-# Version Date 20220530
+# Version Date 20220602
 # Set up the prompt
-alias s-v='echo ".zshrc Version 20220530"'
+alias s-v='echo ".zshrc Version 20220602"'
 source ~/.profile
 source ~/.bash_aliases
 
@@ -29,7 +29,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use sudo 
   copyfile web-search copypath copybuffer history you-should-use 
-  history-substring-search
+  history-substring-search command-not-found rsync
 )
 
 source $ZSH/oh-my-zsh.sh
