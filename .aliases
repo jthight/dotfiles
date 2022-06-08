@@ -1,0 +1,7 @@
+# File: .aliases
+# Author: John Hight
+# Description: .aliases for Linux systems
+# Last Modified: June 08, 2022
+#
+
+alias a-a='echo "Local Aliases Version 20220608"'

@@ -1,10 +1,10 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-# Version Date 20220507
+# Version Date 20220608
 # Ansible copied file .bashrc
 
-alias s-v='echo ".bashrc Version 20220507"'
+alias s-v='echo ".bashrc Version 20220608"'
 
 # If not running interactively, don't do anything
 case $- in
@@ -67,6 +67,11 @@ shopt -s checkwinsize
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+# Check for local .aliases file and load if present
+LALIASE=~/.aliases
+if [ -f "$LALIASE" ]; then
+  source "$LALIASE"
 fi
 
 # disable flow control CTRL-S CTRL-Q

@@ -1,8 +1,13 @@
-# Version Date 20220603
+# Version Date 20220608
 # Set up the prompt
-alias s-v='echo ".zshrc Version 20220603"'
+alias s-v='echo ".zshrc Version 20220608"'
 source ~/.profile
 source ~/.bash_aliases
+# Check for local .aliases file and load if present
+LALIASE=~/.aliases
+if [ -f "$LALIASE" ]; then
+  source "$LALIASE"
+fi
 
 setopt histignorealldups sharehistory
 
