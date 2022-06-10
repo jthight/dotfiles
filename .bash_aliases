@@ -238,3 +238,13 @@ sudo chown -R ${DEST}:${DEST} /home/${DEST}/
 sudo ls -al /home/${DEST}/
 }
 
+# Bat alias and help tools
+BATFILE=/usr/bin/bat
+if [ ! -f "$BATFILE" ]; then
+  alias bat='batman'
+fi
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+alias bathelp='bat --plain --language=man'
+help() {
+    "$@" --help 2>&1 | bathelp
+}
