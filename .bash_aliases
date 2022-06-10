@@ -14,7 +14,8 @@ alias wsh='ps -p $$'
 # enable color support of ls, less and man, and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='exa'
+    # alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -45,7 +46,7 @@ alias l='ls -CF'
 alias l.='ls -d .* --color=auto'
 alias la.='ls -dl .* --color=auto'
 # Display the directory structure better.
-alias tree='tree --dirsfirst -F'
+alias tree='exa --tree'
 
 # Print my public IP
 alias myip='curl ipinfo.io/ip'

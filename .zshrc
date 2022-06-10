@@ -1,13 +1,7 @@
-# Version Date 20220608
+# Version Date 20220610
 # Set up the prompt
-alias s-v='echo ".zshrc Version 20220608"'
+alias s-v='echo ".zshrc Version 20220610"'
 source ~/.profile
-source ~/.bash_aliases
-# Check for local .aliases file and load if present
-LALIASE=~/.aliases
-if [ -f "$LALIASE" ]; then
-  source "$LALIASE"
-fi
 
 setopt histignorealldups sharehistory
 
@@ -67,6 +61,16 @@ bindkey '^[[B' history-substring-search-down
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# Check for Bash Aliases in .bash_aliases
+BALIASE=~/.bash_aliases
+if [ -f "$BALIASE" ]; then
+  source "$BALIASE"
+fi
+# Check for local .aliases file and load if present
+LALIASE=~/.aliases
+if [ -f "$LALIASE" ]; then
+  source "$LALIASE"
+fi
 
 # Starship as prompt https://starship.rs/
 eval "$(starship init zsh)"
