@@ -72,5 +72,11 @@ if [ -f "$LALIASE" ]; then
   source "$LALIASE"
 fi
 
+# Evaluate zoxide
+ eval "$(zoxide init zsh)"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
 # Starship as prompt https://starship.rs/
 eval "$(starship init zsh)"

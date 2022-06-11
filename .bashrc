@@ -115,5 +115,12 @@ printf "   %s\n" ".bashrc:       $(s-v)"
 printf "   %s\n" ".bash_aliases: $(a-v)"
 printf "\n"
 
+# Enable zoxide
+eval "$(zoxide init bash)"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
 # Starship as prompt https://starship.rs/
 eval "$(starship init bash)"
+
