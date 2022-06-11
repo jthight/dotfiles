@@ -241,7 +241,7 @@ sudo ls -al /home/${DEST}/
 # Bat alias and help tools
 if ! command -v bat &> /dev/null
 then
-  alias bat='batman'
+  alias bat='batcat'
 fi
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias bathelp='bat --plain --language=man'
