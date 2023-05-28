@@ -1,7 +1,7 @@
 # File: .bash_aliases
 # Author: John Hight
 # Description: .bash_aliases for Linux systems
-# Last Modified: May 30, 2022
+# Last Modified: May 27, 2023
 #
 # Aliases
 # alias alias_name="command_to_run"
@@ -9,6 +9,10 @@
 # Ansible copied file .bash_aliases
 
 alias a-v='echo "Version 20220530"'
+
+# Check the fastes NordVPN connection
+alias fs='fetchserver'
+
 # Which shell is running now
 alias wsh='ps -p $$'
 # enable color support of ls, less and man, and also add handy aliases
