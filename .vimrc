@@ -26,6 +26,7 @@ function! IOS_code()
   " iplug add commands; Installed PlugIns
   " iplug add 
   " iplug add https://github.com/Raimondi/delimitMate.git
+  " iplug add https://github.com/rust-lang/rust.vim
   " iplug add https://github.com/SirVer/ultisnips.git
   " iplug add https://github.com/adelarsq/vim-matchit.git
   " iplug add https://github.com/chrisbra/unicode.vim.git
@@ -87,6 +88,7 @@ function! LOAD_plugins()
   call minpac#add('kana/vim-textobj-entire') " Create your own text objects
   call minpac#add('kana/vim-textobj-line') " Create your own text objects
   call minpac#add('vim-jp/syntax-vim-ex')
+  call minpac#add('rust-lang/rust.vim')
   call minpac#add('adelarsq/vim-matchit')
   call minpac#add('junegunn/vim-easy-align')
   call minpac#add('tyru/open-browser.vim') " opens url in browser
