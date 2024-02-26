@@ -74,7 +74,7 @@ function! IOS_code()
 endfunction
 " }}} Load IOS code function "
 
- PLUGINS:
+" PLUGINS:
 " Load common PlugIns function {{{ "
 function! LOAD_plugins()
   " Try to load minpac.
