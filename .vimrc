@@ -1,8 +1,8 @@
 " File: $MYVIMRC
 " Editor: John Hight
 " Description: vimrc for All systems
-" Last Modified: May 5, 2022
-let editver = "20220505"
+" Last Modified: February 26, 2024
+let editver = "20240226"
 
 " Search For MAIN_GENERAL_CODE: To go to GENERAL_CODE
 " Normally this if-block is not needed, because `:set nocp` is done
@@ -74,7 +74,7 @@ function! IOS_code()
 endfunction
 " }}} Load IOS code function "
 
-" PLUGINS:
+ PLUGINS:
 " Load common PlugIns function {{{ "
 function! LOAD_plugins()
   " Try to load minpac.
