@@ -88,7 +88,7 @@ style = "bold green"
 
 [time]
 time_format = "%T"
-format = "[](bright-yellow) [$time]($style) "
+format = "[$time]($style) "
 style = "bright-blue"
 disabled = false
 
